@@ -130,4 +130,4 @@ function display(data) {
 }
 
 // load data
-d3.csv('./data/word_counts.csv').then(display);
+d3.csv('./data/pos_counts_intercept.csv').then(display);
