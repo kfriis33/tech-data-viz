@@ -11,12 +11,16 @@
 // // Declare svg_graph with width and height
 // let graph_3_width = MAX_WIDTH / 2, graph_3_height = 575;
 
-let margin = {top: 20, right: 20, bottom: 30, left: 80},
+const margin = {top: 30, right: 20, bottom: 30, left: 80},
 width = 960 - margin.left - margin.right,
 height = 500 - margin.top - margin.bottom;
 
 const MAX_WIDTH = Math.max(1080, window.innerWidth);
 const MAX_HEIGHT = 720;
 
-let graph_1_width = (MAX_WIDTH / 2) - 10, graph_1_height = 400;
+let graph_1_width = (MAX_WIDTH / 2) - 150, graph_1_height = 400;
 
+
+
+// location to centre the bubbles
+const centre = { x: 1300/2, y: height/2 };

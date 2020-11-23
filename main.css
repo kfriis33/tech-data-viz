@@ -1,27 +1,11 @@
-html, body {
-	/* display: flex;
-	align-items: center;
-	justify-content: center; */
-	height: 100%;
-	margin: 0;
+body {
+	padding:7%;
 }
-
-.header {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-
-
-*, *:before, *:after {
-	box-sizing: border-box;
-}
-
-text {
-	font: 10px sans-serif;
-	text-anchor: middle;
-}
-
 .defintion {
 	text-align: center;
 	margin: 0 25%;
+}
+
+.bar-chart {
+	padding:20px;
 }
