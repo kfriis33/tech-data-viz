@@ -1,0 +1,103 @@
+company_description
+Stripe builds economic infrastructure for the internet. Businesses of every size use the companyâ€™s software to accept online payments and run technically sophisticated financial operations in more than 100 countries. Stripe helps new companies get started and grow their revenues, and established businesses accelerate into new markets and launch new business models.
+Airbnb exists to create a world where anyone can belong anywhere, providing healthy travel that is local, authentic, diverse, inclusive and sustainable. They empower people around the world to unlock and monetize their spaces, passions and talents to become hospitality entrepreneurs. Airbnb provides access to 6+ million unique places to stay in 100,000+ cities and 40,000+ unique experiences run by hosts.
+Cruise is building the worldâ€™s most advanced, all-electric, self-driving car technology to safely connect people with the places, things, and experiences they care about. Self-driving cars will help save lives, reimagine cities, redefine time in transit, and restore freedom of movement for individuals who live in dense urban settings. Acquired by GM in 2016.
+Starting with restaurants, DoorDash is building the last mile logistics network and commerce layer to help local businesses compete in the modern day era.
+Coinbase is the easiest and most trusted place to buy, sell, and manage cryptocurrencies, offering a suite of products for individual investors, active traders, businesses and institutions. Coinbase has built the world's leading compliant crypto company serving over 30 million accounts in over 100 countries.
+Instacart is the North American leader in grocery delivery and one of the fastest-growing companies in e-commerce. Instacartâ€™s same-day delivery and pickup services bring fresh groceries and everyday essentials to busy people and families across the U.S. and Canada in as fast as an hour. They deliver from more than 20,000 stores across more than 5,500 cities in North America.
+Dropbox is a leading global collaboration platform that's transforming the way people work together, from the smallest business to the largest enterprise. With more than 500 million registered users across 180 countries, their products are designed to establish a more enlightened way of working. They went public in 2018.
+Ginkgo Bioworks is a biotech company that programs cells for customers across multiple markets.
+Gusto is the people platform that provides small businesses with everything they need to take care of their teams, including payroll, health insurance benefits, employee self on-boarding, 401(K), time off requests, time tracking, and more. Gusto currently serves more than 100,000 small businesses across the U.S. and has a net promoter score of 75+.
+Freight forwarding is the circulatory system for global trade. It still largely runs on paper. Flexport is changing this with a strategic operating model for modern businesses that powers more transparent, more agile, more efficient, and more profitable global supply chains.
+Rappi is building on-demand delivery and financial services for Latin America.
+Brex does corporate credit cards.
+Reddit is a network of communities where individuals can find experiences built around their interests, hobbies and passions. Redditors submit, vote and comment on content, stories and discussions about the topics they care about the most. With over 330 million global users monthly, Reddit is home to the most open and authentic conversations on the Internet.
+GitLab is a complete DevOps platform, delivered as a single application. Built on open source, GitLab leverages the community contributions of thousands of developers and millions of users to continuously deliver new DevOps innovations. More than 100,000 organizations from startups to global enterprise organizations trust GitLab to deliver great software at new speeds.
+PagerDuty acts as the central nervous system for the digital enterprise. They empower DevOps, IT operations, support, security, and business leaders to turn any signal into insight and real-time action across any operational use case. Their products help organizations improve operations, accelerate innovation, increase revenue, mitigate security risk, and deliver great customer experience.
+Checkr is disrupting the background check industry and creating solutions that will power the future of work. Checkrâ€™s product has shifted the on-demand economy and has continued to scale into serving enterprise companies across various industries.
+Segment is the world's leading provider of Customer Data Infrastructure (CDI). Thousands of companies across 71 countries, from high-growth startups to the worldâ€™s largest enterprises, use Segment to collect, clean and connect their first-party data to the applications they need to run their businesses.
+Docker provides a platform for building, sharing and running modern applications. With Docker, organizations have the freedom to build and manage any application from existing to greenfield and securely run them anywhere, from hybrid cloud to the edge â€” without technology or infrastructure lock-in.
+Scale builds infrastructure to accelerate the development of AI. Their first product is a platform for training data and validation data to empower faster development.
+Faire is a curated wholesale marketplace connecting more than 40,000 local retailers with thousands of hand-selected emerging and established brands. Faire enables independent retailers to grow with the advantages of big box terms, and empowers makers to build and run thriving businesses that create stronger local communities.
+Twitch is a global community that comes together each day to create multiplayer entertainment: unique, live, unpredictable experiences created by the shared interactions of millions. Acquired by Amazon in 2014.
+PlanGrid builds construction software. Acquired by Autodesk in 2018.
+With Mixpanel, companies can analyze how and why their users engage, convert, and retain in real-time across web, mobile, and smart devices. And then use that data to improve their business and productsâ€”all in one place.
+Amplitude is the world's #1 product intelligence platform. We empower teams to use customer data to build great product experiences for growth.
+Optimizely offers a complete set of digital experience optimization technologies, including AI-powered personalization and experimentation, which encompasses A/B testing, multivariate testing, and server-side testing. They take out the guesswork to enable brands to deliver relevant experiences driven by data.
+Boom Supersonic is building Overture, historyâ€™s fastest commercial airliner. Boomâ€™s vision is to bring families, businesses, and cultures closer together through supersonic travel and make the world dramatically more accessible. The company is backed by world-class investors and has 30 aircraft on pre-order from Japan Airlines and Virgin Group.
+Grin is a micromobility and payments platform for Latam.
+Meesho is India's largest social commerce platform. Meesho gives entrepreneurs a platform with social sharing integrations with WhatsApp, Facebook and Instagram, that let them easily share products with friends, family, and their larger social network. Meesho also provides them with the right supply, logistics and payment capabilities to successfully run their business.
+Algolia is the search-as-a-service platform that enables companies of all sizes to deliver fast, relevant and scalable search and discovery experiences for consumers across web, mobile, and voice. Algolia allows developers and product teams to build conversational, consumer-grade search to increase online engagement, conversion and revenue.
+GOAT Group is the worldâ€™s largest marketplace for authentic sneakers. The company offers the greatest selection of sneakers available through retail stores, websites and mobile apps under the GOAT and Flight Club brands.
+Zapier helps you be more productive and grow your business through automation.
+MessageBird enables businesses to easily and seamlessly communicate with their customers across channels and geographies.
+Standard Cognition is building autonomous checkout for everyone who is not Amazon.
+Memebox is leading the future of beauty by building a portfolio of brands that leverages data and the most innovate k-beauty technology.
+Embark builds self-driving trucks. Embark trucks are already moving commercial freight in the southwest United States under the supervision of a human monitor.
+Helion Energy is breaking the fusion barrier and will be the first to clean, safe, and low-cost commercial electricity.
+EquipmentShare provides smart jobsite technology & solutions to increase productivity for the construction industry. They rent machines to contractors and provide a single dashboard view of the connected jobsite.
+SendBird is the no.1 chat API for mobile apps and websites. They power the worldâ€™s leading apps across on-demand services, marketplaces, and online communities.
+Rescale is a cloud simulation platform that helps accelerate innovation for the world's leading enterprises. Their solutions empower executives, IT leaders, engineers, and scientists to deliver R&D breakthroughs in the aerospace, automotive, life sciences, manufacturing, oil & gas, and semiconductor sectors.
+GoCardless is reinventing recurring payments by building a global network on top of bank debit systems.
+Rigetti Computing is on a mission to build the worldâ€™s most powerful computers to help solve humanityâ€™s most important and pressing problems. They build and deliver integrated quantum-classical systems through their Quantum Cloud Services platform to help their customers solve valuable business problems in energy, finance, science, and medicine.
+Razorpay is the easiest way to accept, process and disburse digital payments for businesses in India.
+North is building everyday, fashion-first smartglasses.
+Relativity is the first and only company to 3D print entire rockets, accelerating the ability to iterate and scale rockets quickly, and build the future of humanity in space.
+Podium is an interaction management platform that helps local businesses conveniently connect with their customers. Podium facilitates millions of customer interactions by helping drive customer-generated online reviews and providing improved customer messaging tools. They currently serve more than 40,000 local businesses.
+Benchling makes biotechnology research faster and more collaborative.
+Ironclad is the digital contracting platform loved by modern legal teams. From making to managing, they automate every part of contracting, unlocking critical data that propels business forward. They're trusted by top brands like Dropbox, Fitbit and Staples.
+Newfront is building the modern platform to transact insurance. Their technology creates human-computer symbiosis that empowers rather than replaces people.
+InfluxData, creator of the open source time series database InfluxDB, empowers developers and organizations to build transformative monitoring, analytics and IoT applications quicker and to scale. Their purpose-built platform handles the massive volumes of time-stamped data produced by IoT devices, applications, networks, containers and computers.
+Webflow is a visual web development platform on a mission to democratize creation for the web. Over 50,000 businesses rely on Webflow for web design, development, content management, and hosting â€“ all in a single, no-code platform.
+People.ai accelerates enterprise growth through the power of AI. With the industryâ€™s only Revenue Intelligence System, People.ai frees all customer-facing teams, including sales, marketing, and customer success, from manual data entry by automatically capturing all contacts and customer activity data. They dynamically update the CRM and provide actionable intelligence across all management tools.
+Weebly allows anyone to start and grow an online business with curated website templates, powerful ecommerce and integrated marketing. Acquired by Square in 2018.
+Xendit provides localized payments for Southeast Asia. Xendit helps you accept, store and send money at scale, reliably.
+Matterport is the world leader in immersive 3D technology. They offer a platform for prosumers and professionals to easily capture, edit and share 3D models of physical spaces. These navigable virtual tours are presented in Matterport's photo-realistic digital media format. Experience places through Matterport's interactive 3D models online as if you are actually there: matterport.com/gallery.
+EasyPost builds logistics infrastructure for the internet. Businesses of every sizeâ€”from new startups to public companiesâ€”use their software to manage everything from freight to package tracking.
+Sift builds trust & safety solutions that secure and streamline experiences for leading digital commerce, community and content businesses. Their machine learning systems help prevent payments fraud, content spam, and account takeover while dynamically removing user friction and growing revenue.
+The Athletic is subscription sports media for fans in the US, UK, and Canada. Top writers, deep storytelling with no ads, and over 100 podcasts keep fans all over the world informed on their favorite teams.
+Mattermost is an open source alternative to Slack and Microsoft Teams. They offer a high trust, Slack-compatible messaging and collaboration platform for enterprises who value security, flexibility and innovation.
+WePay is an integrated payments provider that helps SaaS companies offer payment processing to their users. Acquired by JPMorgan Chase in 2017.
+Vidyard is a video platform that helps businesses transform communications and drive more revenue through the strategic use of online video.
+Weave is a customer communication platform for high-touch, service-based businesses. They combine customer communication with in-depth customer profiles and data into one smart, care-centric interaction.
+Nurx provides convenient, affordable, and personalized care to patients â€” offering birth control, emergency contraception, PrEP, HPV home testing, and STI home testing.
+Proxy is a digital identity platform that empowers people to authenticate and interact with devices in the physical world using their smartphone.
+Heap automatically captures every user interaction, including clicks, submits, taps, and more to retroactively analyze your data without writing code.
+Presto is the leading provider of enterprise SaaS solutions for restaurants.
+Payfazz creates a distributed network of bank agents in Indonesia, who can perform financial transactions on behalf of unbanked and underbanked customers.
+MemSQL is a distributed, highly-scalable SQL database that can run anywhere.
+Fivetran is a zero-configuration, fully-managed data pipeline that replicates all your company's databases, apps, and events into a single data warehouse.
+Rippling is the first way for businesses to manage their HR and IT â€” from payroll and benefits, to employee computers and apps â€” all in one, modern system.
+Clever brings all K-12 schools' apps into one secure portal with a single sign-on for everyone in the district. It is used by over half of all schools in America.
+Heroku is a cloud platform that developers use to deliver, monitor, and scale modern apps. Acquired by Salesforce in 2010.
+Fivestars is the largest rewards program for local businesses.
+CoreOS develops open source tools that are the fundamental building blocks of modern distributed systems. Acquired by Red Hat in 2018.
+ClearTax is the modern tax and finance platform for Indians. Using ClearTax's platform, over 4 million Indian consumers and businesses file taxes, identify tax saving opportunities, manage their investments, and get paid faster.
+Quero is a marketplace for higher education in Brazil. They help students search, compare, prepare, and enroll in private colleges.
+Ridecell provides the technology needed to run and scale a standalone ridesharing or carsharing operationâ€”or a hybrid service that combines both.
+HelloSignâ€™s digital workflow platform â€” which includes eSignature, digital workflow, and electronic fax solutions â€” helps over 75,000 companies and millions of people do business faster. Acquired by Dropbox in 2019.
+GrubMarket is an eCommerce platform and company disrupting the food supply chain system. It supplies affordable and local farm products to business customers and individual consumers.
+Lattice makes modern HR software for employee performance management and engagement surveys.
+Unbabel is an AI powered human translation platform. With headquarters in Lisbon, Portugal, and San Francisco, California, the company is focused on the translation of customer service communications. Its customers include easyJet, Booking.com, Rovio Entertainment, Under Armour, Pinterest, and Facebook.
+Athelas enables rapid at-home patient monitoring for a wide range of chronically ill populations.
+Oh My Green brings delicious and nutritious food, healthy snacks, drinks, and wellness practices to the workplace.
+Lever is recruiting software that provides companies with everything they need to attract, source, and hire top talent.
+Atrium is a corporate law firm that uses technology to give startups a legal experience that is fast, transparent, and price-predictable.
+Zeus leases unfurnished, privately-owned homes and converts them into expertly appointed, convenient, and full-service corporate housing units for todayâ€™s global professional.
+Front is the shared inbox for teams â€” all your emails, apps, and teammates in one collaborative workspace.
+Le Tote is a clothing rental subscription service featuring top brands. The company acquired the iconic retailer Lord & Taylor, which makes Le Tote the first digitally native brand to acquire an established brick-and-mortar store.
+ShipBob provides simple, fast, and affordable fulfillment for ecommerce businesses and crowdfunding campaigns.
+Snapdocs is a real estate technology company that helps the many participants in a real estate closing better work together through integration and automation. Their mission is to perfect real estate closings.
+GitPrime provides analytics for software development teams. By analyzing metadata from git, code reviews, and issue trackers, they help engineering teams move faster, increase effectiveness, and debug their development process with data. Acquired by Pluralsight in 2019.
+Scribd is a digital library, e-book and audiobook subscription service.
+Guesty is property management software. Their solution simplifies the complex operational needs that property managers face on a daily basis â€“ from guest communication to task assignment to payment processing.
+Axoniâ€™s distributed ledger technology provides secure, multi-party data infrastructure with unparalleled performance.
+Founded in 2013 with a vision of automating the offline world, Lob is an API company that transforms the largely manual process of printing and mailing into an automated service that integrates directly with CRM, marketing automation, and data tools.
+Notable is transforming the way cancer is treated. Notableâ€™s approach combines AI with an automated lab to determine which drugs or combination of drugs will be most effective for specific types of cancers.
+Atomwise discovers new medicines using computational design. Its discoveries help partners deliver better medicines faster.
+Flutterwave is building digital payment infrastructure for Africa. Their API enables merchants to process credit cards and local alternative payments across Africa.
+Panorama helps educators use data to support each studentâ€™s needs, and helps leaders build great schools. The platform helps build students' social-emotional skills and get more students prepared for college, their careers, and life.
+FutureAdvisor helps people reach their long-term financial goals by managing their savings and investments. Acquired by Blackrock in 2015.
+SFOX is a better way to trade digital currencies, offering the best price and deepest liquidity with a single point of access to global cryptocurrency markets.
+Lambda School is a revolutionary school that trains people to be software engineers and data scientists at no upfront cost. Students won't pay a cent until they land a job.
+ZeroDown is creating a new pathway to homeownership by enabling you to own a home without needing a downpayment.

@@ -2,11 +2,6 @@
 
 // bubbleChart creation function; instantiate new bubble chart given a DOM element to display it in and a dataset to visualise
 function bubbleChart() {
-	const width = 940;
-	const height = 500;
-  
-	// location to centre the bubbles
-	const centre = { x: width/2, y: height/2 };
   
 	// strength to apply to the position forces
 	const forceStrength = 0.03;
@@ -124,9 +119,9 @@ function bubbleChart() {
 let myBubbleChart = bubbleChart();
 
 // function called once promise is resolved and data is loaded from csv
-// calls bubble chart function to display inside #vis div
+// calls bubble chart function to display inside #bubble-chart div
 function display(data) {
-	myBubbleChart('#vis', data);
+	myBubbleChart('#bubble-chart', data);
 }
 
 // load data
