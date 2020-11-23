@@ -9,5 +9,6 @@ def create_counts(minwords, minpos, filepath, txtoutfilepath, countoutfilepath, 
 
     count_verbs(filepath, verbfilepath, countverbfilepath, minpos)
 
-    pos = textblob_adj(txt, posoutfilepath)
-    count_from_text_file(pos, countposoutfilepath, minpos)
+    textblob_adj(txt, posoutfilepath, countposoutfilepath, minpos)
+
+create_counts(20, 10, 'data/defense2/defense2.csv', 'data/defense2/defense.txt', 'data/defense2/word_counts_defense.csv', 'data/defense2/defenseAdj.txt', 'data/defense2/adj_counts_defense.csv', 'data/defense2/defenseVerbs.txt', 'data/defense2/verb_counts_defense.csv')

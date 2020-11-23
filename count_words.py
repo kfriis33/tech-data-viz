@@ -15,7 +15,7 @@ def create_text_file(filepath, outfilepath):
     csv_f = csv.reader(file)
 
     for row in csv_f:
-        content.append(row[5])
+        content.append(row[0])
 
     with open(outfilepath, "w") as txt_file:   
         for line in content:
