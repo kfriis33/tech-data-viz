@@ -124,9 +124,9 @@ function bubbleChart() {
 let myBubbleChart = bubbleChart();
 
 // function called once promise is resolved and data is loaded from csv
-// calls bubble chart function to display inside #vis div
+// calls bubble chart function to display inside #bubble-chart div
 function display(data) {
-	myBubbleChart('#vis', data);
+	myBubbleChart('#bubble-chart', data);
 }
 
 // load data

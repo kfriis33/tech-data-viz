@@ -4,25 +4,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8">
-        <title>Tech Data Viz</title>
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="main.css"/>
-        <!--Feel free to add more CSS files as needed-->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script> -->
-        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-    </head>
+    
+    <!-- <meta charset="utf-8"> -->
+    <title>Tech Data Viz</title>
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
+    <!--Feel free to add more CSS files as needed-->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script> -->
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+</head>
 <body>
-    <div class="header">
-        <hr>
-        <h3>A visualization of the language surrounding tech</h3>
-        <hr>
-        <div id = 'vis'></div>
+    <div class="container">
+    <div class="header row">
+        <h3 class="text-center">Techno-Optmism</h3>
+        <p class="defintion">The belief that technology can continually be improved and can improve the lives of people, making the world a better place.</p>
+        <div id = 'bubble-chart'></div>
+    </div>
+
+    <div class="row"> 
+        <h3>Word Count by Source</h3>
+        <div id='bar1'></div>
+    </div>
+    <div class="row">
+        <div id='bar2'></div>
+    </div>
     </div>
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     
     <!--Feel free to add more JavaScript files as needed-->
+    <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="bubbles.js"></script>
+    <script type="text/javascript" src="bar.js"></script>
+    <!-- <script type="text/javascript" src="save2.js"></script> -->
+
 </body>
 </html>
