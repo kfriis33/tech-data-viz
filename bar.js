@@ -9,7 +9,7 @@ let y = d3.scaleBand()
     .padding(0.1);  // Improves readability
 
 const fillColor = d3.scaleOrdinal()
-    .domain(["1", "2", "3", "5", "99"])
+    .domain(["1", "2", "3", "4", "5"])
     .range(["#0074D9", "#7FDBFF", "#39CCCC", "#3D9970", "#AAAAAA"]);
 
 function startBar(source, data_path, div_id, color) {
@@ -27,6 +27,7 @@ function startBar(source, data_path, div_id, color) {
 }
 
 function setData(data, svg, width, height, source, color) {
+    data = data.slice(0,10)
 
     // Set up reference to count SVG group
     let countRef = svg.append("g");
@@ -88,7 +89,6 @@ function setData(data, svg, width, height, source, color) {
     c.exit().remove();
 }
 
-startBar("The Intercept", './data/word_counts.csv', '#bar1', '#0074D9');
-startBar("The Atlantic", './data/word_counts.csv', '#bar2', "#7FDBFF");
-startBar("Vox", './data/word_counts.csv', '#bar3', '#39CCCC');
-startBar("Angell List", './data/word_counts.csv', '#bar4', "#3D9970");
+for (var i=0; i < dataSources.length; i++) {
+    startBar(dataSources[i].name, dataSources[i].path, dataSources[i].div_id, COLORS[i]);
+ }
