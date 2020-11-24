@@ -30,8 +30,8 @@ function bubbleChart() {
   
 	// set up colour scale
 	const fillColour = d3.scaleOrdinal()
-		.domain(["1", "2", "3", "5", "99"])
-		.range(["#0074D9", "#7FDBFF", "#39CCCC", "#3D9970", "#AAAAAA"]);
+		.domain(["1", "2", "3", "4", "5"])
+		.range(COLORS);
   
 	// data manipulation function takes raw data from csv and converts it into an array of node objects
 	// each node will store data and visualisation values to draw a bubble
@@ -62,14 +62,16 @@ function bubbleChart() {
 	// main entry point to bubble chart, returned by parent closure
 	// prepares rawData for visualisation and adds an svg element to the provided selector and starts the visualisation process
 	let chart = function chart(selector, rawData) {
+
+	  rawData = rawData.slice(0,40)
 	  // convert raw data into nodes data
 	  nodes = createNodes(rawData);
   
 	  // create svg element inside provided selector
 	  svg = d3.select(selector)
 		.append('svg')
-		.attr('width', width)
-		.attr('height', height)
+		.attr('width', BUBBLES_WIDTH)
+		.attr('height', BUBBLES_HEIGHT)
   
 	  // bind nodes data to circle elements
 	  const elements = svg.selectAll('.bubble')
@@ -125,4 +127,4 @@ function display(data) {
 }
 
 // load data
-d3.csv('./data/pos_counts_intercept.csv').then(display);
+d3.csv('./data/pos_counts_vox.csv').then(display);

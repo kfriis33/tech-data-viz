@@ -22,5 +22,37 @@ let graph_1_width = (MAX_WIDTH / 2) - 150, graph_1_height = 400;
 
 
 
+let BUBBLES_WIDTH = 1200, BUBBLES_HEIGHT = 700;
+
 // location to centre the bubbles
-const centre = { x: 1300/2, y: height/2 };
+const centre = { x: BUBBLES_WIDTH/2, y: BUBBLES_HEIGHT/2 };
+
+
+
+let dataSources = [{
+    "name": "The Intercept",
+    "path": './data/word_counts.csv',
+    "div_id": '#bar1'
+  },
+  {
+    "name": "Vox",
+    "path": './data/word_counts_vox.csv',
+    "div_id": '#bar2'
+  },
+  {
+    "name": "The Intercept",
+    "path": './data/word_counts.csv',
+    "div_id": '#bar3'
+  },
+  {
+    "name": "The Intercept",
+    "path": './data/word_counts.csv',
+    "div_id": '#bar4'
+  }
+]
+
+let COLORS = ['#ffa600',
+    '#ff6361',
+    '#bc5090',
+    '#58508d',
+    '#003f5c']
