@@ -13,8 +13,7 @@ def scrape(filepath):
         if url != 'Name_URL':
             r = requests.get(url)
             soup = BeautifulSoup(r.content, 'html.parser')
-            print(soup.prettify())
-            desc = soup.select("[class~=styles_component__2JAFO]")
+            desc = soup.find('div', class_='styles_description__34Ra7')
             print(desc)
 
             descriptions.append(desc.text)
