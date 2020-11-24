@@ -1,0 +1,11 @@
+"In some ways, we are already living in the future. In others, we are mired in the past while adversaries surge ahead. Decades of global stability have allowed our technology advantage to erode while our brightest minds work on problems of convenience and entertainment.
+‍
+In that time, consumer and commercial technology has outpaced the defense industry in both capability and cost. Developments in AI, drones, and sensor fusion have thrived in the private sector resulting in the commoditization of the same advancements that will win and deter future conflicts.
+
+We are a team of experts from Oculus, Palantir, General Atomics, SpaceX, Tesla and Google exploiting breakthroughs in consumer and commercial technology to radically evolve our defense capabilities."
+"WE MAKE PRODUCTS FOR HUMAN-DRIVEN ANALYSIS OF REAL-WORLD DATA
+We’re focused on creating the world’s best user experience for working with data, one that empowers people to ask and answer complex questions without requiring them to master querying languages, statistical modeling, or the command line. To achieve this, we build platforms for integrating, managing, and securing data on top of which we layer applications for fully interactive human-driven, machine-assisted analysis."
+
+
+"A pioneer in mobile analytics, Venntel provides security and risk management solutions through technological innovation, data reliability, and proven results.
+"
