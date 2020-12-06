@@ -1,0 +1,46 @@
+body {
+  margin:8% 8% !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+h3 {
+	padding-top: 30px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 18px !important;
+}
+
+.bar-chart {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.toolbar-text {
+  /* line-height: 3.5; */
+  padding-left: 10px;
+  padding-top:2px;
+}
+
+.toolbar-text-no-padding {
+  line-height: 3.5;
+}
+
+.dropdown-button {
+  padding-left:10px;
+}
+
+#dropdown-button {
+  background-color: #694D75;
+  border-color: #694D75;
+  
+}
+
+#dropdown-button:hover {
+  background-color: #331832;
+  border-color: #331832;
+}
