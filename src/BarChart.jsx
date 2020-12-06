@@ -29,7 +29,11 @@ let BUBBLES_WIDTH = 1200, BUBBLES_HEIGHT = 630;
 // location to centre the bubbles
 const centre = { x: BUBBLES_WIDTH/2, y: BUBBLES_HEIGHT/2 };
 
-
+let COLORS = {"news":'#ff6361',
+    "companies":'#bc5090',
+    "academia":'#58508d'}
+   //  '#58508d',
+   //  '#005780'}
 
 
 
@@ -43,8 +47,7 @@ class BarChart extends Component {
 
    }
    componentDidMount() {
-      let i =0
-      this.startBar("", this.props.path, this.refs.chart, this.props.color, this.props.data);
+      this.startBar("", this.props.path, this.refs.chart, COLORS[this.props.type], this.props.data);
    }
    // componentDidUpdate() {
    //    let i =0
@@ -71,10 +74,7 @@ class BarChart extends Component {
          let y = d3.scaleBand()
          .range([0, bar_height - margin.top - margin.bottom])
          .padding(0.1);  // Improves readability
-      
-         const fillColor = d3.scaleOrdinal()
-         .domain(["1", "2", "3", "4", "5"])
-         .range(["#0074D9", "#7FDBFF", "#39CCCC", "#3D9970", "#AAAAAA"]);
+
 
          // x axis: word counts
          let x = d3.scaleLinear()

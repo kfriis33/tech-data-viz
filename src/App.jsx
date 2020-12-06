@@ -14,10 +14,17 @@ import ScatterPlot from "./ScatterPlot"
 
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+
 import InterceptData from './data/counts/total_counts/intercept_total_counts.csv'
 import VoxData from './data/counts/total_counts/vox_total_counts.csv'
 import YCombData from './data/counts/total_counts/ycomb_total_counts.csv'
 import AngelData from './data/counts/total_counts/defense_total_counts.csv'
+import CryptoData from './data/counts/total_counts/crypto_total_counts.csv'
+import BrownData from './data/counts/total_counts/brown_total_counts.csv'
+import CVData from './data/counts/total_counts/cvpaper_total_counts.csv'
+import MLData from './data/counts/total_counts/mlpaper_total_counts.csv'
+import DepDefData from './data/counts/total_counts/depdef_total_counts.csv'
+
 
 let dataSources = [{
   "name": "The Intercept",
@@ -42,9 +49,38 @@ let dataSources = [{
   "data": AngelData,
   "color": '#58508d',
   "type": "companies"
-}
+},
+{
+  "name": "Crypto Conference",
+  "data": CryptoData,
+  "color": '#58508d',
+  "type": "academia"
+},
+{
+  "name": "Brown CS News",
+  "data": BrownData,
+  "color": '#005780',
+  "type": "academia"
+},
+{
+  "name": "Computer Vision Conference",
+  "data": CVData,
+  "color": '#58508d',
+  "type": "academia"
+},
+{
+  "name": "Machine Learning Conference",
+  "data": MLData,
+  "color": '#58508d',
+  "type": "academia"
+},
+{
+  "name": "Dept of Defense News",
+  "data": DepDefData,
+  "color": '#58508d',
+  "type": "academia"
+},
 ]
-
 let COLORS = ['#ffa600',
     '#ff6361',
     '#bc5090',
@@ -65,7 +101,7 @@ export default class App extends React.Component {
   makeGridTile = (source) => {
     return (
       <GridListTile>
-        <BarChart source={source.name} color={source.color} data={source.data} />
+        <BarChart source={source.name} type={source.type} data={source.data} />
       </GridListTile>
     )
   }

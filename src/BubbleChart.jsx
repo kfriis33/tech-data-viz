@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 
 import * as d3 from "d3";
-import BubbleData from './data/counts/adj_counts/all_adj_counts.csv'
+import BubbleData from './data/counts/adj_counts/ycomb_adj_counts.csv'
 
 const margin = {top: 30, right: 20, bottom: 30, left: 100}
 
