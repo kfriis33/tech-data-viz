@@ -25,6 +25,7 @@ import CVData from './data/counts/total_counts/cvpaper_total_counts.csv'
 import MLData from './data/counts/total_counts/mlpaper_total_counts.csv'
 import DepDefData from './data/counts/total_counts/depdef_total_counts.csv'
 
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
 
 let dataSources = [{
   "name": "The Intercept",
@@ -144,17 +145,28 @@ export default class App extends React.Component {
        
         <div className="row">
           <div className="col-md-7 mt-5">
-            <p>We were interested in comparing how technology is spoken about in different spheres: companies, news outlets, academia, and the government. To explore this, we scraped websites and articles from each of these categories to aggregate all of the text-based language that was used, and then found the most commonly used words in each. We cleaned out very common words such as 'the' and then took the top 10 most common words to visualize below:</p>
+            <p>In this project, we were interested in exploring the trend of techno-optimism, the notion that technology can continually be improved and can continually improve people’s lives and make the world a better place. From class readings and discussions throughout the semester, this notion was repeatedly debunked as we saw example after example of technologies that did more harm than good despite their “for good” framing to the public. This “for good” framing is pervasive throughout the tech community, from startups pitching ideas to VCs, to tech giants mining users’ data, to governments defending mass surveillance. We were interested in exploring these trends more formally, but initially we were not sure exactly how. We came up with the following questions to guide us:
+How can trends of techno-optimism be quantified and communicated to the public?
+How do the ways companies describe themselves differ from their true impact?
+</p>
           </div>
         </div>
         <div className="row">
           <div className="col-md-5"></div>
           <div className="col-md-7 mt-5" style={{textAlign:"right"}}>
-            <p>We were interested in comparing how technology is spoken about in different spheres: companies, news outlets, academia, and the government. To explore this, we scraped websites and articles from each of these categories to aggregate all of the text-based language that was used, and then found the most commonly used words in each. We cleaned out very common words such as 'the' and then took the top 10 most common words to visualize below:</p>
+            <p>These questions led us to focusing on the written language that pushes forward overly positive views of technology. We brainstormed various text-based data sources that might have this agenda such as company mission statements and websites, and then brainstormed text-based data sources that might provide contrast such as news articles, court cases, and academia. We created datasets for ourselves using web scraping, then used natural language processing to analyze them to find the most commonly used words, the most common verbs and adjectives, and the sentiment rating of the text as a whole. Finally, we made data visualizations of these results and displayed them on a public website. By quantifying the trends of language used by different technology stakeholders and creating visualizations of them, we sought to reveal the fluff that’s used to make technology seem like an entirely positive, world-changing good and display the dissonance between this language and technology’s true impact.</p>
           </div>
         </div>
 
         <div>
+          <h3>Sentiment Analysis</h3>
+          <p>
+          <span className="tab"/>
+            <FiberManualRecordIcon style={{fill: "#ff6361"}}/> News Outlets <span className="tab"/>
+            <FiberManualRecordIcon style={{fill: "#bc5090"}}/> Companies <span className="tab"/>
+            <FiberManualRecordIcon style={{fill: "#58508d"}}/> Academia 
+
+          </p>
           <ScatterPlot/>
         </div>
 

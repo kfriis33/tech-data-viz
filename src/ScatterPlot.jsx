@@ -3,189 +3,105 @@ import { scaleLinear } from "d3-scale";
 import {extent} from "d3-array"
 import * as d3 from "d3";
 import d3Tip from "d3-tip";
+import ScatterData from './data/counts/sentiments.csv'
 
+let COLORS = {"news":'#ff6361',
+    "company":'#bc5090',
+    "academia":'#58508d'}
 
 // Scatterplot
 class ScatterPlot extends React.Component {
     constructor(props) {
         super(props);
-        // Graph width and height - accounting for margins
-        this.drawWidth = this.props.width - this.props.margin.left - this.props.margin.right;
-        this.drawHeight = this.props.height - this.props.margin.top - this.props.margin.bottom;
 
     }
     componentDidMount() {
-        this.update();
+        this.startScatter(this.refs.scatterChart);
     }
     // Whenever the component updates, select the <g> from the DOM, and use D3 to manipulte circles
     componentDidUpdate() {
-        this.update();
+        this.startScatter(this.refs.scatterChart);
     }
-    updateScales() {
-        // Calculate limits
-        let xMin = d3.min(this.props.data, (d) => +d.x * .9);
-        let xMax = d3.max(this.props.data, (d) => +d.x * 1.1);
-        let yMin = d3.min(this.props.data, (d) => +d.y * .9);
-        let yMax = d3.max(this.props.data, (d) => +d.y * 1.1);
+ 
+    startScatter = (div_id) => {
+        // set the dimensions and margins of the graph
+        var margin = {top: 10, right: 30, bottom: 30, left: 60},
+        width = 860 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
 
-        // Define scales
-        this.xScale = d3.scaleLinear().domain([xMin, xMax]).range([0, this.drawWidth])
-        this.yScale = d3.scaleLinear().domain([yMax, yMin]).range([0, this.drawHeight])
-    }
-    updatePoints() {
-        // Define hovers 
-        // Add tip
-        let tip = d3Tip().attr('class', 'd3-tip').html(function (d) {
-            return d.label;
-        });
+        // append the svg object to the body of the page
+        let svg_scatter = d3.select(div_id)
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
 
-        // Select all circles and bind data
-        let circles = d3.select(this.chartArea).selectAll('circle').data(this.props.data);
+        //Read the data
+        d3.csv(ScatterData).then(function(data) {
 
-        // Use the .enter() method to get your entering elements, and assign their positions
-        circles.enter().append('circle')
-            .merge(circles)
-            .attr('r', (d) => this.props.radius)
-            .attr('fill', (d) => this.props.color)
-            .attr('label', (d) => d.label)
-            .on('mouseover', tip.show)
-            .on('mouseout', tip.hide)
-            .style('fill-opacity', 0.3)
-            .transition().duration(500)
-            .attr('cx', (d) => this.xScale(d.x))
-            .attr('cy', (d) => this.yScale(d.y))
-            .style('stroke', "black")
-            .style('stroke-width', (d) => d.selected == true ? "3px" : "0px")
+            // data.forEach(function(d) {
+            //     d.subjectivity = +d.subjectivity;
+            //     d.polarity = +d.polarity;
+            // });
 
 
-        // Use the .exit() and .remove() methods to remove elements that are no longer in the data
-        circles.exit().remove();
+            console.log(data)
+            // Add X axis
+            var x = d3.scaleLinear()
+                .domain([0, 1])
+                .range([ 0, width ]);
+            svg_scatter.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x));
 
-        // Add hovers using the d3-tip library        
-        d3.select(this.chartArea).call(tip);
-    }
-    updateAxes() {
-        let xAxisFunction = d3.axisBottom()
-            .scale(this.xScale)
-            .ticks(5, 's');
+            // Add Y axis
+            var y = d3.scaleLinear()
+                .domain([0, 1])
+                .range([ height, 0]);
+                
+            svg_scatter.append("g")
+                .call(d3.axisLeft(y));
 
-        let yAxisFunction = d3.axisLeft()
-            .scale(this.yScale)
-            .ticks(5, 's');
+            // Add dots
+            var dots = svg_scatter.append("g")
+                .selectAll("dot")
+                .data(data)
 
-        d3.select(this.xAxis)
-            .call(xAxisFunction);
+            dots.enter()
+                .append("circle")
+                .attr("id", "circleBasicTooltip")
+                .attr("cx", (d)=> x(d.polarity))
+                .attr("cy", (d) => y(d.subjectivity))
+                .attr("r", 8)
+                .style("fill", (d)=>COLORS[d.type])
+                .append("text")
+                    // .style("text-anchor", "middle")
+                // .attr("dy", -10)
+                    .text((d) => d.source)
+            
+            // create a tooltip
+            var tooltip = d3.select(div_id)
+                .append("div")
+                .style("position", "absolute")
+                .style("visibility", "hidden")
+                .text("I'm a circle!");
+            d3.select("#circleBasicTooltip")
+            .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+            // .on("mousemove", function(){return tooltip.style("top", (event.pageY-800)+"px").style("left",(event.pageX-800)+"px");})
+            .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+        })
 
-        d3.select(this.yAxis)
-            .call(yAxisFunction);
-    }
-    update() {
-        this.updateScales();
-        this.updateAxes();
-        this.updatePoints();
     }
     render() {
         return (
-            <div className="chart-wrapper">
-                <svg className="chart" width={this.props.width} height={this.props.height}>
-                    <text transform={`translate(${this.props.margin.left},15)`}>{this.props.title}</text>
-                    <g ref={(node) => { this.chartArea = node; }}
-                        transform={`translate(${this.props.margin.left}, ${this.props.margin.top})`} />
-
-                    {/* Axes */}
-                    <g ref={(node) => { this.xAxis = node; }}
-                        transform={`translate(${this.props.margin.left}, ${this.props.height - this.props.margin.bottom})`}></g>
-                    <g ref={(node) => { this.yAxis = node; }}
-                        transform={`translate(${this.props.margin.left}, ${this.props.margin.top})`}></g>
-
-                    {/* Axis labels */}
-                    <text className="axis-label" transform={`translate(${this.props.margin.left + this.drawWidth / 2}, 
-                        ${this.props.height - this.props.margin.bottom + 30})`}>{this.props.xTitle}</text>
-
-                    <text className="axis-label" transform={`translate(${this.props.margin.left - 30}, 
-                        ${this.drawHeight / 2 + this.props.margin.top}) rotate(-90)`}>{this.props.yTitle}</text>
-                </svg>
-            </div>
-
+            <div ref ="scatterChart">
+            
+         </div>
         )
     }
 }
-
-ScatterPlot.defaultProps = {
-    data: [{ x: 10, y: 20 }, { x: 15, y: 35 }],
-    width: 300,
-    height: 300,
-    radius: 5,
-    color: "blue",
-    margin: {
-        left: 50,
-        right: 10,
-        top: 20,
-        bottom: 50
-    },
-    xTitle: "X Title",
-    yTitle: "Y Title",
-};
-
-
-/*
-function RandomData() {
-  const data = [...Array(100)].map((e, i) => {
-    return {
-      x: Math.random() * 40,
-      y: Math.random() * 40,
-      temparature: Math.random() * 500
-    };
-  });
-  return data;
-}
-
-class ScatterPlot extends Component {
-
-    render () {
-        const data = RandomData(),
-            w = 600,
-            h = 600,
-            margin = {
-            top: 40,
-            bottom: 40,
-            left: 40,
-            right: 40
-            };
-
-        const width = w - margin.right - margin.left,
-            height = h - margin.top - margin.bottom;
-
-        const xScale = scaleLinear()
-            .domain(extent(data, d => d.x))
-            .range([0, width]);
-
-        const yScale = scaleLinear()
-            .domain(extent(data, d => d.y))
-            .range([height, 0]);
-
-        const circles = data.map((d, i) => (
-            <circle
-            key={i}
-            r={5}
-            cx={xScale(d.x)}
-            cy={yScale(d.y)}
-            style={{ fill: "lightblue"}}
-            />
-        ));
-
-        return (
-            <div>
-            <svg width={w} height={h}>
-                <g transform={`translate(${margin.left},${margin.top})`}>
-                {circles}
-                </g>
-            </svg>
-            </div>
-        );
-    }
-}
-*/
 
 
 

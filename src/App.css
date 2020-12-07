@@ -15,6 +15,11 @@ h4 {
   font-size: 18px !important;
 }
 
+.tab {
+  display: inline-block;
+  margin-right:20px;
+}
+
 .bar-chart {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -35,12 +40,12 @@ h4 {
 }
 
 #dropdown-button {
-  background-color: #694D75;
-  border-color: #694D75;
+  background-color: #005780;
+  border-color: #005780;
   
 }
 
 #dropdown-button:hover {
-  background-color: #331832;
-  border-color: #331832;
+  background-color: #0687c4;
+  border-color: #0687c4;
 }
