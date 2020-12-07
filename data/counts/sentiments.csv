@@ -1,0 +1,10 @@
+Source,Polarity,Subjectivity
+angel_defense,0.113501,0.402041
+brown_cs,0.154003,0.421604
+dep_def,0.078607,0.377360
+intercept,0.041194,0.322226
+vox,0.071830,0.416922
+cv_papers,0.100287,0.418165
+ml_papers,0.08705,0.43160
+crypto_papers,0.087018,0.463497
+angel_all,0.204216,0.435581
