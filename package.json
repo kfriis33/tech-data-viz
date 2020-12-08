@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.5.0",
     "d3": "^6.3.0",
     "d3-tip": "^0.9.1",
+    "bootstrap": "^4.5.3",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
