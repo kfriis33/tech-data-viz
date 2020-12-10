@@ -23,8 +23,6 @@ def create_text_file(filepath, outfilepath):
     
     return outfilepath
     
-
-
 # Code modified from https://medium.com/@agrimabahl/elegant-python-code-reproduction-of-most-common-words-from-a-story-25f5e28e0f8c
 
 def count_from_text_file(filepath, outfilepath, minwords):
@@ -32,7 +30,7 @@ def count_from_text_file(filepath, outfilepath, minwords):
     file = open(filepath, "r") 
     file = file.read()
     # https://algs4.cs.princeton.edu/35applications/stopwords.txt
-    stopwords = set(line.strip() for line in open('./data/stopwords.txt'))
+    stopwords = set(line.strip() for line in open('src/data/stopwords.txt'))
     stopwords = stopwords.union(set(['a', 'i', 'mr', 'ms', 'mrs', 'one', 'two', 'said', 'is', 'and']))
     wordcount = collections.defaultdict(int)
 
