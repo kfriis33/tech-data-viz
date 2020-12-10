@@ -23,4 +23,4 @@ def scrape(filepath):
         for line in descriptions:
             txt_file.write(line + "\n")
 
-scrape('data/allmarkets.csv')
+scrape('data/scraping_data/angel-allmarkets.csv')

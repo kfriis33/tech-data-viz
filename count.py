@@ -11,4 +11,4 @@ def create_counts(minwords, minpos, filepath, txtoutfilepath, countoutfilepath, 
 
     textblob_adj(txt, posoutfilepath, countposoutfilepath, minpos)
 
-create_counts(20, 5, 'data/yCombinator.csv', 'data/ycomb/ycomb.txt', 'data/ycomb/word_counts_ycomb.csv', 'data/ycomb/ycombAdj.txt', 'data/ycomb/adj_count_ycomb.csv', 'data/ycomb/ycombVerbs.txt', 'data/ycomb/verb_counts_ycomb.csv')
+create_counts(70, 30, 'data/scraping_data/angel_all.csv', 'data/raw-text/angel_all.txt', 'data/counts/total_counts/angelall_total_counts.csv', 'data/raw-text/angelall_adj.txt', 'data/counts/adj_counts/angelall_adj_counts.csv', 'data/raw-text/angelall_verbs.txt', 'data/counts/verb_counts/angelall_verb_counts.csv')

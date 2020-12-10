@@ -60,5 +60,3 @@ def count_verbs(filepath, verbfilepath, countfilepath, minpos):
             txt_file.write(line + " ")
 
     count_from_text_file(verbfilepath, countfilepath, minpos)
-
-count_verbs('data/voxArticles.txt', 'data/voxVerbs.txt', 'data/verb_count_vox.csv', 20)
