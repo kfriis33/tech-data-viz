@@ -62,49 +62,71 @@ def sentiment(filepath, row_num):
         sentence = row[row_num]
         blob = TextBlob(sentence)
         sent.append((blob.sentiment.polarity, blob.sentiment.subjectivity))
-        #sent.append(blob.sentiment.subjectivity)
 
     df = pd.DataFrame(sent, columns = ['polarity','subjectivity'])
     include =['object', 'float', 'int'] 
     desc = df.describe(include = include)
     print(desc)
-    #print(df.mean(axis=0))
+    print(df.mean(axis=0))
+    print(df.mean(axis=0)[0])
     # print(df.describe().mean)
     # print(desc.mean(axis=0))
     #arr = np.array(sent)
     #print(df.min(axis=0)[0])
     #print(np.argwhere(np.isclose(arr, df.min(axis=0), 0.1)))
     #print(np.argmin(arr[1:200], axis=0))
-    #print(arr[15], array[15][1])
-    #print(arr[36], array[36][1])
-    # print(array[69])
-    # print(array[91])
-    #print(array[104])
-    # print(array[284])
-    #print(array[289])
-    # print(array[303])
-    # print(array[314])
 
-    
     #print(sent)
 
-    # sent2 = []
+def sent_ttest(filepath1, filepath2, filepath3):
+    sent = []
 
-    # file2 = open('data/defense/defense2.csv', 'r')
-    # lines = csv.reader(file2)
+    file1 = open(filepath1, 'r')
+    lines = csv.reader(file1)
 
-    # for l in lines:
-    #     sentence = l[0]
-    #     blob = TextBlob(sentence)
-    #     sent2.append(blob.sentiment.subjectivity)
+    for l in lines:
+        sentence = l[0]
+        blob = TextBlob(sentence)
+        sent.append((blob.sentiment.polarity, blob.sentiment.subjectivity))
 
-    
+    df = pd.DataFrame(sent, columns = ['polarity','subjectivity'])
+    include =['object', 'float', 'int'] 
+    print(df.describe(include = include))
 
-    # print(scipy.stats.ttest_ind(sent, sent2, equal_var=False))
 
-sentiment('src/data/scraping_data/ycombo.csv', 0)
+    sent2 = []
+
+    file2 = open(filepath2, 'r')
+    lines2 = csv.reader(file2)
+
+    for l in lines2:
+        sentence = l[0]
+        blob = TextBlob(sentence)
+        sent2.append((blob.sentiment.polarity, blob.sentiment.subjectivity))
+
+    df2 = pd.DataFrame(sent2, columns = ['polarity','subjectivity'])
+    print(df2.describe(include = include))
+
+    sent3 = []
+
+    file3 = open(filepath3, 'r')
+    lines3 = csv.reader(file3)
+
+    for l in lines3:
+        sentence = l[0]
+        blob = TextBlob(sentence)
+        sent3.append((blob.sentiment.polarity, blob.sentiment.subjectivity))
+
+    df3 = pd.DataFrame(sent3, columns = ['polarity','subjectivity'])
+    print(df3.describe(include = include))
+
+    print(scipy.stats.f_oneway(sent, sent2, sent3))
+    #print(scipy.stats.ttest_ind(sent, sent2, equal_var=False))
+
+sent_ttest('src/data/academia.csv', 'src/data/companies.csv', 'src/data/news.csv')
+#sentiment('src/data/scraping_data/ycombo.csv', 0)
 #sentiment('src/data/scraping_data/intercept-data.csv', 6)
-sentiment('src/data/scraping_data/vox-data.csv', 7)
+#sentiment('src/data/scraping_data/vox-data.csv', 7)
 #sentiment('src/data/scraping_data/brown_cs.csv', 0)
 #sentiment('src/data/scraping_data/dep_def.csv', 0)
 #sentiment('src/data/scraping_data/cv_papers.csv', 2)
