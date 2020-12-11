@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 
 import * as d3 from "d3";
-import BubbleData from './data/counts/adj_counts/angelall_adj_counts.csv'
+import BubbleData from './data/counts/adj_counts/companies_adj_counts.csv'
 
 const margin = {top: 30, right: 20, bottom: 30, left: 100}
 
@@ -12,7 +12,7 @@ const MAX_HEIGHT = 720;
 let BUBBLES_WIDTH = 1200, BUBBLES_HEIGHT = 630;
 
 // location to centre the bubbles
-const centre = { x: window.innerWidth/2, y: BUBBLES_HEIGHT/2 };
+const centre = { x: window.innerWidth/2 -50, y: BUBBLES_HEIGHT/2 };
 
 let COLORS_BUBBLE = ['#ffa600',
     '#ff6e54',
@@ -31,10 +31,9 @@ class BubbleChart extends Component {
    componentDidMount() {
       this.startBubble();
    }
-   // componentDidUpdate() {
-   //    let i =0
-   //    this.startBar(dataSources[i].name, dataSources[i].path, this.refs.chart, COLORS[i]);
-   // }
+   componentDidUpdate() {
+      this.startBubble();
+   }
 
    startBubble = () => {      
 
@@ -58,7 +57,7 @@ class BubbleChart extends Component {
             .force('charge', d3.forceManyBody().strength(d => Math.pow(d.radius, 2.0) * 0.01))
             // .force('center', d3.forceCenter(centre.x, centre.y))
             .force('x', d3.forceX().strength(forceStrength).x(centre.x))
-            .force('y', d3.forceY().strength(forceStrength).y(centre.y))
+            .force('y', d3.forceY().strength(forceStrength*2).y(centre.y))
             .force('collision', d3.forceCollide().radius(d => d.radius + 1));
 
         // force simulation starts up automatically, which we don't want as there aren't any nodes yet

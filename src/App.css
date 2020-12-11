@@ -21,11 +21,26 @@ h5 {
   margin-bottom: 3px !important;
   padding-bottom: 0 !important;
 }
+
+/* quotes */
+h6 {
+  color: #005780;
+  font-size: 24px !important;
+}
+
+a {
+  color: #005780 !important;
+}
 .tab {
   display: inline-block;
   margin-right:20px;
 }
 
+.description {
+  text-align: center;
+  margin-left: 20%;
+  margin-right:20%;
+}
 .bar-chart {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -57,9 +72,18 @@ h5 {
 }
 
 .navitem{
-  padding: 5% 5% 1% 5%;
+  padding: 1% 5% 1% 5%;
+  /* margin-left:-6px;
+  margin-right:-6px;
+  background-color: #005780; */
   background-color: white;
   border-radius: 10px;
+  /* color: white !important */
+}
+
+#context {
+  /* background-color:black;
+  color: white; */
 }
 
 .sDot {

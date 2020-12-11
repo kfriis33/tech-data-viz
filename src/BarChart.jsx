@@ -24,11 +24,16 @@ let bar_width = (MAX_WIDTH / 2) - 150, bar_height = 400;
 
 
 
-let COLORS = {"news":'#ff6361',
-    "companies":'#bc5090',
-    "academia":'#58508d'}
+// let COLORS = {"news":'#ff6361',
+//     "companies":'#bc5090',
+//     "academia":'#58508d'}
    //  '#58508d',
    //  '#005780'}
+
+   let COLORS = {"news":'#ff6e54',
+    "companies":'#dd5182',
+    "academia":'#955196',
+    "defense":"#444e86"}
 
 
 // y axis: words
@@ -55,10 +60,11 @@ class BarChart extends Component {
    componentDidMount() {
       this.startBar(COLORS[this.props.type], this.props.data);
    }
-   // componentDidUpdate() {
-   //    let i =0
-   //    this.startBar(dataSources[i].name, dataSources[i].path, this.refs.chart, COLORS[i]);
-   // }
+
+   componentDidUpdate() {
+      this.setData(this.props.data, COLORS[this.props.type])
+
+   }
 
    startBar = (color, data) => {
       this.svg_bar = d3.select(this.refs.chart)

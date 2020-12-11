@@ -230,6 +230,10 @@ export default class App extends React.Component {
         return true
     } else if (this.state.barGridFilter === "Companies" && item.type ==="companies") {
       return true
+    } else if (this.state.barGridFilter === "Academia" && item.type ==="academia") {
+      return true
+    } else if (this.state.barGridFilter === "Defense" && item.type ==="defense") {
+      return true
     } else {
         return false
     }
@@ -244,7 +248,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="navbar" class="sticky-top" style={{padding: "1% 0% 1% 0%"}} bg="light" variant="light">
+          <h2 className="text-center mb-4">Techno-Optmism</h2>
+          <div className="navbar" class="sticky-top" style={{padding: "1% 0% 1% 0%"}} bg="light" variant="light">
           <div class="container-fluid" style={{textAlign: "center"}}>
             <a class="navitem" href="#context">Context</a>
             <a class="navitem" href="#sentiment">Sentiment</a>
@@ -252,38 +257,33 @@ export default class App extends React.Component {
             <a class="navitem" href="#sources">Sources</a>
           </div>
         </div>
-        
-        
-        <div className="mt-5">
-          <h2 className="text-center">Techno-Optmism</h2>
-          <p className="text-center mx-5">The belief that technology can continually be improved and can improve the lives of people, making the world a better place.</p>
-     
-        </div>
-        <div id = 'bubble-chart'>
+
+              <div id = 'bubble-chart'>
           <BubbleChart/>
         </div>
-       
-        <h3 id="context">Context</h3>
-        <div className="row">
-          <div className="col-md-7 mt-5">
+ 
+       <div id="context">
+        <h3 >Context</h3>
+        <div className="row justify-content-between align-items-center mt-4">
+          <div className="col-md-7">
             <p>In this project, we were interested in exploring the trend of techno-optimism, the notion that technology can continually be improved and can continually improve people’s lives and make the world a better place. From class readings and discussions throughout the semester, this notion was repeatedly debunked as we saw example after example of technologies that did more harm than good despite their “for good” framing to the public. This “for good” framing is pervasive throughout the tech community, from startups pitching ideas to VCs, to tech giants mining users’ data, to governments defending mass surveillance. We were interested in exploring these trends more formally, but initially we were not sure exactly how. We came up with the following questions to guide us:
 How can trends of techno-optimism be quantified and communicated to the public?
 How do the ways companies describe themselves differ from their true impact?
 </p>
           </div>
-          <div className="col-md-5 mt-5" style={{textAlign:"right"}}>
-            <h3><i>“Techno-optimism: the belief that technology and technologists are building the future and that the rest of the world, including government, needs to catch up”</i></h3>
+          <div className="col-md-4" style={{textAlign:"right"}}>
+            <h6><i>“Techno-optimism: the belief that technology and technologists are building the future and that the rest of the world, including government, needs to catch up”</i></h6>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-5">
-          <h3><i>“Techno-optimism has deep roots in American political culture, and its belief in American ingenuity and technological progress”</i></h3>
+        <div className="row justify-content-between align-items-center mt-5">
+          <div className="col-md-4">
+          <h6><i>“Techno-optimism has deep roots in American political culture, and its belief in American ingenuity and technological progress”</i></h6>
           </div>
-          <div className="col-md-7 mt-5" style={{textAlign:"right"}}>
+          <div className="col-md-7" style={{textAlign:"right"}}>
             <p>These questions led us to focusing on the written language that pushes forward overly positive views of technology. We brainstormed various text-based data sources that might have this agenda such as company mission statements and websites, and then brainstormed text-based data sources that might provide contrast such as news articles, court cases, and academia. We created datasets for ourselves using web scraping, then used natural language processing to analyze them to find the most commonly used words, the most common verbs and adjectives, and the sentiment rating of the text as a whole. Finally, we made data visualizations of these results and displayed them on a public website. By quantifying the trends of language used by different technology stakeholders and creating visualizations of them, we sought to reveal the fluff that’s used to make technology seem like an entirely positive, world-changing good and display the dissonance between this language and technology’s true impact.</p>
           </div>
         </div>
-
+        </div>
         <div id="sentiment">
           <h3>Sentiment Analysis</h3>
           <p>
@@ -298,8 +298,7 @@ How do the ways companies describe themselves differ from their true impact?
           <ScatterPlot/>
 
           </div>
-          <p>We used <a href="https://textblob.readthedocs.io/en/dev/">TextBlob</a> to analyze the sentiment of our datasets along 2 axes: polarity (x axis) and subjectivity (y axis). Polarity measures how positive or negative the text of 
-            a source is on a scale of -1 to 1. None of our sources had polarity scores below 0 which is why the x axis starts at 0.
+          <p>We used <a href="https://textblob.readthedocs.io/en/dev/">TextBlob</a> to analyze the sentiment of our datasets along 2 axes: polarity (x axis) and subjectivity (y axis). Polarity measures how positive or negative the text of a source is on a scale of -1 (negative) to 1 (positive).
             <br></br> <br></br>
             Subjectivity is measured from a scale of 0 being objective to 1 being subjective. TextBlob measures subjectivity
             partially by how many adverbs are used (assumes texts with a higher proportion of adverbs are more subjective).
@@ -320,7 +319,9 @@ How do the ways companies describe themselves differ from their true impact?
                     <Dropdown.Item eventKey="All" onSelect={this.filterCharts}>All</Dropdown.Item>
                     <Dropdown.Item eventKey="News outlets" onSelect={this.filterCharts}>News Outlets</Dropdown.Item>
                     <Dropdown.Item eventKey="Companies" onSelect={this.filterCharts}>Companies</Dropdown.Item>
-                    <Dropdown.Item eventKey="Academic papers" onSelect={this.filterCharts}>Academic papers</Dropdown.Item>
+                    <Dropdown.Item eventKey="Academia" onSelect={this.filterCharts}>Academia</Dropdown.Item>
+                    <Dropdown.Item eventKey="Defense" onSelect={this.filterCharts}>Defense</Dropdown.Item>
+
                 </DropdownButton>
         </ButtonToolbar>
        
