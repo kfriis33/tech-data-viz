@@ -135,7 +135,10 @@ let COLORS = ['#ffa600',
     '#58508d',
     '#005780']
 
-
+  let COLORS_DICT = {"news":'#ff6361',
+  "company":'#bc5090',
+  "academia":'#58508d',
+  "defense":"#005780"}
 
 export default class App extends React.Component {
   constructor(props) {
@@ -226,12 +229,16 @@ How do the ways companies describe themselves differ from their true impact?
           <h3>Sentiment Analysis</h3>
           <p>
           <span className="tab"/>
-            <FiberManualRecordIcon style={{fill: "#ff6361"}}/> News Outlets <span className="tab"/>
-            <FiberManualRecordIcon style={{fill: "#bc5090"}}/> Companies <span className="tab"/>
-            <FiberManualRecordIcon style={{fill: "#58508d"}}/> Academia 
+            <FiberManualRecordIcon style={{fill: COLORS_DICT["news"]}}/> News Outlets <span className="tab"/>
+            <FiberManualRecordIcon style={{fill: COLORS_DICT['company']}}/> Companies <span className="tab"/>
+            <FiberManualRecordIcon style={{fill: COLORS_DICT['academia']}}/> Academia <span className="tab"/>
+            <FiberManualRecordIcon style={{fill: COLORS_DICT['defense']}}/> Defense 
 
           </p>
+          <div id="scatter-plot">
           <ScatterPlot/>
+
+          </div>
           <p>We used <a href="https://textblob.readthedocs.io/en/dev/">TextBlob</a> to analyze the sentiment of our datasets along 2 axes: polarity (x axis) and subjectivity (y axis). Polarity measures how positive or negative the text of 
             a source is on a scale of -1 to 1. None of our sources had polarity scores below 0 which is why the x axis starts at 0.
             <br></br> <br></br>

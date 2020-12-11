@@ -101,7 +101,6 @@ class BarChart extends Component {
 
 
 
-
          let x_axis_text = svg.append("text")
             .attr("transform", `translate(${(bar_width - margin.left - margin.right) / 2},
                      ${(bar_height - margin.top - margin.bottom) + 15})`)

@@ -7,7 +7,10 @@ import ScatterData from './data/counts/sentiments.csv'
 
 let COLORS = {"news":'#ff6361',
     "company":'#bc5090',
-    "academia":'#58508d'}
+    "academia":'#58508d',
+    "defense":"#005780"}
+
+
 
 // Scatterplot
 class ScatterPlot extends React.Component {
@@ -37,6 +40,11 @@ class ScatterPlot extends React.Component {
             .append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
+
+        let tooltip = d3.select(div_id)
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
 
         //Read the data
         d3.csv(ScatterData).then(function(data) {
@@ -68,6 +76,39 @@ class ScatterPlot extends React.Component {
             var dots = svg_scatter.append("g")
                 .selectAll("dot")
                 .data(data)
+            
+
+
+            const mouseover = (event, d) => {
+                console.log("mouseover")
+                console.log("event", event)
+                console.log("pointer", d3.pointer(event))
+                let color_span = `<span style="color: #69b3a2;">`;
+
+
+                let html = `<h5 style="color:${COLORS[d.type]}">${d.source}</h5>
+                            <span>Polarity: ${parseFloat(d.polarity).toFixed(2)} </span><br/>
+                            <span>Subjectivity: ${parseFloat(d.subjectivity).toFixed(2)} </span>`;
+
+            
+                // Show the tooltip and set the position relative to the event X and Y location
+                tooltip      
+                .html(html)
+                    .style("left", `${(event.pageX)}px`)
+                    .style("top", `${(event.pageY) +5}px`)
+                    .style("box-shadow", `2px 2px 5px gray`)
+              
+                    .transition()
+                    .duration(200)
+                    .style("opacity", 0.9)
+            };
+    
+            const mouseout = (event, d) => {
+                console.log("mouseout")
+            tooltip.style('opacity', 0);
+            }
+    
+
 
             dots.enter()
                 .append("circle")
@@ -77,8 +118,11 @@ class ScatterPlot extends React.Component {
                 .attr("r", 8)
                 .style("fill", (d)=>COLORS[d.type])
                 .attr("class", "sDot")
-                .append("title")
-                .text("hello");
+                .on("mouseout", mouseout)
+                .on("mouseover", mouseover);
+
+                // .append("title")
+                // .text("hello");
 
             // svg_scatter.selectAll("text")
             //     .data(data)
@@ -101,7 +145,7 @@ class ScatterPlot extends React.Component {
     render() {
         return (
             <div ref ="scatterChart">
-            
+            <div id="tooltip"/>
          </div>
         )
     }

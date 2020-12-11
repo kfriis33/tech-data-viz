@@ -15,6 +15,12 @@ h4 {
   font-size: 18px !important;
 }
 
+h5 {
+  font-size:14px !important;
+  /* line-height: 0 !important; */
+  margin-bottom: 3px !important;
+  padding-bottom: 0 !important;
+}
 .tab {
   display: inline-block;
   margin-right:20px;
@@ -62,4 +68,18 @@ h4 {
 
 .sDot:hover {
   fill:  rgb(0, 0, 0) !important;
+}
+
+.tooltip {
+  position: absolute;
+  font-size: 12px;
+  min-width: 100px;
+  padding: 10px;
+  width:  auto;
+  height: auto;
+  pointer-events: none;
+  background-color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
 }

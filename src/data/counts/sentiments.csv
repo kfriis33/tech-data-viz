@@ -1,11 +1,11 @@
-source,polarity,subjectivity,type,color
-angel_defense,0.113501,0.402041,company,#ff6361
-brown_cs,0.154003,0.421604,academia,#ff6361
-dep_def,0.078607,0.377360,news,#ff6361
-intercept,0.041194,0.322226,news,#ff6361
-vox,0.071830,0.416922,news,#ff6361
-cv_papers,0.100287,0.418165,academia,#ff6361
-ml_papers,0.08705,0.43160,academia,#ff6361
-crypto_papers,0.087018,0.463497,academia,#ff6361
-angel_all,0.204216,0.435581,company,#ff6361
-ycombo,0.198837,0.421543,company,#ff6361
+source,polarity,subjectivity,type
+AngelList Defense Companies,0.113501,0.402041,company
+Brown CS News,0.154003,0.421604,academia
+Dept of Defense News,0.078607,0.377360,defense
+The Intercept,0.041194,0.322226,news
+Vox,0.071830,0.416922,news
+Computer Vision Conference,0.100287,0.418165,academia
+Machine Learning Conference,0.08705,0.43160,academia
+Crypto Conference,0.087018,0.463497,academia
+AngelList All Companies,0.204216,0.435581,company
+Y-Combinator,0.198837,0.421543,company
