@@ -195,10 +195,11 @@ let COLORS = ['#ffa600',
     '#58508d',
     '#005780']
 
-  let COLORS_DICT = {"news":'#ff6361',
-  "company":'#bc5090',
-  "academia":'#58508d',
-  "defense":"#005780"}
+    let COLORS_DICT = {"news":'#ff6e54',
+    "company":'#dd5182',
+    "academia":'#955196',
+    "defense":"#444e86"}
+
 
 export default class App extends React.Component {
   constructor(props) {

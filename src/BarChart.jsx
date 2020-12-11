@@ -62,7 +62,18 @@ class BarChart extends Component {
    }
 
    componentDidUpdate() {
-      this.setData(this.props.data, COLORS[this.props.type])
+      let val = this.state.radioSelector;
+
+      if (val == "all") {
+         this.setData(this.props.data, COLORS[this.props.type])
+      } else if (val == "verbs") {
+         this.setData(this.props.verbData, COLORS[this.props.type])
+      } else if (val == "adjectives") {
+         this.setData(this.props.adjData, COLORS[this.props.type])
+      } else {
+         console.log("ERROR")
+         this.setData(this.props.data, COLORS[this.props.type])
+      }
 
    }
 
