@@ -73,4 +73,3 @@ def count_from_text_file(filepath, outfilepath, minwords):
             if word: # Weird bug where None key being stored
                 f.write("%s,%s,%s\n"%(word,group_counter,count))
             counter+=1
-
