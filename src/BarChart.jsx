@@ -36,6 +36,16 @@ let COLORS = {"news":'#ff6361',
    //  '#005780'}
 
 
+// y axis: words
+let y = d3.scaleBand()
+   .range([0, bar_height - margin.top - margin.bottom])
+   .padding(0.1);  // Improves readability
+
+// x axis: word counts
+let x = d3.scaleLinear()
+.range([0, bar_width -margin.left - margin.right-15]);
+
+
 
 class BarChart extends Component {
    constructor(props){
@@ -44,58 +54,59 @@ class BarChart extends Component {
          radioSelector:"all"
       }
       this.startBar = this.startBar.bind(this)
+      
 
    }
    componentDidMount() {
-      this.startBar("", this.props.path, this.refs.chart, COLORS[this.props.type], this.props.data);
+      this.startBar(COLORS[this.props.type], this.props.data);
    }
    // componentDidUpdate() {
    //    let i =0
    //    this.startBar(dataSources[i].name, dataSources[i].path, this.refs.chart, COLORS[i]);
    // }
 
-   startBar = (source, data_path, div_id, color, data) => {
-      let svg_bar = d3.select(div_id)
+   startBar = (color, data) => {
+      this.svg_bar = d3.select(this.refs.chart)
          .append("svg")
          .attr("width", bar_width)
          .attr("height", bar_height)
          .append("g")
          .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+      // Set up reference to count SVG group
+      this.countRef = this.svg_bar.append("g");
+
+      this.y_axis_label = this.svg_bar.append("g")
+         .style("font-size", "16px");
+
+      this.setData(data, color)
       
+   }   
+
+   setData = (data, color) => {
+
+      let svg = this.svg_bar
+      let countRef = this.countRef
+      let y_axis_label = this.y_axis_label
+
       d3.csv(data).then(function(data) {
          data.forEach(function(d) {
             d.count = +d.count;
          });
+
          data = data.slice(0,10)
-         
-         let svg = svg_bar;
 
-         // y axis: words
-         let y = d3.scaleBand()
-         .range([0, bar_height - margin.top - margin.bottom])
-         .padding(0.1);  // Improves readability
+         x.domain([0, d3.max(data, function(d) { return d.count; })])
 
 
-         // x axis: word counts
-         let x = d3.scaleLinear()
-            .domain([0, d3.max(data, function(d) { return d.count; })])
-            .range([0, bar_width -margin.left - margin.right-15]);
 
-         console.log(x)
 
-         console.log("max", d3.max(data, function(d) { return d.count; }))
-
-         // Set up reference to count SVG group
-         let countRef = svg.append("g");
-
-         let y_axis_label = svg.append("g")
-            .style("font-size", "16px");
 
          let x_axis_text = svg.append("text")
             .attr("transform", `translate(${(bar_width - margin.left - margin.right) / 2},
                      ${(bar_height - margin.top - margin.bottom) + 15})`)
             .style("text-anchor", "middle");
-            ;
+
 
          // y axis: words
          y.domain(data.map(function(d) { return d.word; }));
@@ -119,7 +130,6 @@ class BarChart extends Component {
 
          let c = countRef.selectAll("text").data(data);
 
-
          // Render the text elements on the DOM
          c.enter()
             .append("text")
@@ -137,17 +147,27 @@ class BarChart extends Component {
          bars.exit().remove();
          c.exit().remove();
 
-
          }).catch(function(err) {
             throw err;
       });
    }
 
    updateData = event => {
-      console.log(event)
+
+      let val = event.target.value
       this.setState({
-         radioSelector: event.target.value
+         radioSelector: val
       })
+
+      if (val == "all") {
+         this.setData(this.props.data, COLORS[this.props.type])
+      } else if (val == "verbs") {
+         this.setData(this.props.verbData, COLORS[this.props.type])
+      } else if (val == "adjectives") {
+         this.setData(this.props.adjData, COLORS[this.props.type])
+      } else {
+         console.log("ERROR")
+      }
    }
 
 render() {

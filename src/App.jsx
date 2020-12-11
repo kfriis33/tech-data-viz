@@ -15,72 +15,118 @@ import ScatterPlot from "./ScatterPlot"
 
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
 
 import InterceptData from './data/counts/total_counts/intercept_total_counts.csv'
 import VoxData from './data/counts/total_counts/vox_total_counts.csv'
 import YCombData from './data/counts/total_counts/ycomb_total_counts.csv'
-import AngelData from './data/counts/total_counts/defense_total_counts.csv'
+import AngelData from './data/counts/total_counts/angelall_total_counts.csv'
 import CryptoData from './data/counts/total_counts/crypto_total_counts.csv'
 import BrownData from './data/counts/total_counts/brown_total_counts.csv'
 import CVData from './data/counts/total_counts/cvpaper_total_counts.csv'
 import MLData from './data/counts/total_counts/mlpaper_total_counts.csv'
 import DepDefData from './data/counts/total_counts/depdef_total_counts.csv'
 
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
+import InterceptVerbs from './data/counts/verb_counts/intercept_verb_counts.csv'
+import InterceptAdj from './data/counts/adj_counts/intercept_adj_counts.csv'
+
+import VoxVerbs from './data/counts/verb_counts/vox_verb_counts.csv'
+import VoxAdj from './data/counts/adj_counts/vox_adj_counts.csv'
+
+import YCombVerbs from './data/counts/verb_counts/ycomb_verb_counts.csv'
+import YCombAdj from './data/counts/adj_counts/ycomb_adj_counts.csv'
+
+import AngelVerbs from './data/counts/verb_counts/angelall_verb_counts.csv'
+import AngelAdj from './data/counts/adj_counts/angelall_adj_counts.csv'
+
+import CryptoVerbs from './data/counts/verb_counts/crypto_verb_counts.csv'
+import CryptoAdj from './data/counts/adj_counts/crypto_adj_counts.csv'
+
+import BrownVerbs from './data/counts/verb_counts/brown_verb_counts.csv'
+// import BrownAdj from './data/counts/adj_counts/brown_adj_counts.csv'
+
+import CVVerbs from './data/counts/verb_counts/cvpaper_verb_counts.csv'
+import CVAdj from './data/counts/adj_counts/cvpaper_adj_counts.csv'
+
+import MLVerbs from './data/counts/verb_counts/mlpaper_verb_counts.csv'
+import MLAdj from './data/counts/adj_counts/mlpaper_adj_counts.csv'
+
+import DepDefVerbs from './data/counts/verb_counts/depdef_verb_counts.csv'
+import DepDefAdj from './data/counts/adj_counts/depdef_adj_counts.csv'
+
+
 
 let dataSources = [{
   "name": "The Intercept",
   "data": InterceptData,
+  "verbs": InterceptVerbs,
+  "adj": InterceptAdj,
   "color": '#ffa600',
   "type": "news"
 },
 {
   "name": "Vox",
   "data": VoxData,
+  "verbs": VoxVerbs,
+  "adj": VoxAdj,
   "color": '#ff6361',
   "type": "news"
 },
 {
   "name": "Y-Combinator Companies",
   "data": YCombData,
+  "verbs": YCombVerbs,
+  "adj": YCombAdj,
   "color": '#bc5090',
   "type": "companies"
 },
 {
   "name": "AngelList Defense Companies",
   "data": AngelData,
+  "verbs": AngelVerbs,
+  "adj": AngelAdj,
   "color": '#58508d',
   "type": "companies"
 },
 {
   "name": "Crypto Conference",
   "data": CryptoData,
+  "verbs": CryptoVerbs,
+  "adj": CryptoAdj,
   "color": '#58508d',
   "type": "academia"
 },
 {
   "name": "Brown CS News",
   "data": BrownData,
+  "verbs": BrownVerbs,
+  // "adj": BrownAdj,
   "color": '#005780',
   "type": "academia"
 },
 {
   "name": "Computer Vision Conference",
   "data": CVData,
+  "verbs": CVVerbs,
+  "adj": CVAdj,
   "color": '#58508d',
   "type": "academia"
 },
 {
   "name": "Machine Learning Conference",
   "data": MLData,
+  "verbs": MLVerbs,
+  "adj": MLAdj,
   "color": '#58508d',
   "type": "academia"
 },
 {
   "name": "Dept of Defense News",
   "data": DepDefData,
+  "verbs": DepDefVerbs,
+  "adj": DepDefAdj,
   "color": '#58508d',
-  "type": "academia"
+  "type": "news"
 },
 ]
 let COLORS = ['#ffa600',
@@ -103,7 +149,7 @@ export default class App extends React.Component {
   makeGridTile = (source) => {
     return (
       <GridListTile>
-        <BarChart source={source.name} type={source.type} data={source.data} />
+        <BarChart source={source.name} type={source.type} data={source.data} verbData={source.verbs} adjData={source.adj}/>
       </GridListTile>
     )
   }

@@ -55,3 +55,11 @@ h4 {
   background-color: white;
   border-radius: 10px;
 }
+
+.sDot {
+  /* fill:  rgb(0, 0, 0) !important; */
+}
+
+.sDot:hover {
+  fill:  rgb(0, 0, 0) !important;
+}
