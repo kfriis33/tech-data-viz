@@ -43,7 +43,7 @@ import CryptoVerbs from './data/counts/verb_counts/crypto_verb_counts.csv'
 import CryptoAdj from './data/counts/adj_counts/crypto_adj_counts.csv'
 
 import BrownVerbs from './data/counts/verb_counts/brown_verb_counts.csv'
-// import BrownAdj from './data/counts/adj_counts/brown_adj_counts.csv'
+import BrownAdj from './data/counts/adj_counts/brown_adj_counts.csv'
 
 import CVVerbs from './data/counts/verb_counts/cvpaper_verb_counts.csv'
 import CVAdj from './data/counts/adj_counts/cvpaper_adj_counts.csv'
@@ -54,6 +54,22 @@ import MLAdj from './data/counts/adj_counts/mlpaper_adj_counts.csv'
 import DepDefVerbs from './data/counts/verb_counts/depdef_verb_counts.csv'
 import DepDefAdj from './data/counts/adj_counts/depdef_adj_counts.csv'
 
+
+
+import NewsData from './data/counts/total_counts/news_total_counts.csv'
+import CompanyData from './data/counts/total_counts/companies_total_counts.csv'
+import AcademiaData from './data/counts/total_counts/academia_total_counts.csv'
+import DefenseData from './data/counts/total_counts/defense_total_counts.csv'
+
+import NewsVerbs from './data/counts/verb_counts/news_verb_counts.csv'
+import CompanyVerbs from './data/counts/verb_counts/companies_verb_counts.csv'
+import AcademiaVerbs from './data/counts/verb_counts/academia_verb_counts.csv'
+import DefenseVerbs from './data/counts/verb_counts/defense_verb_counts.csv'
+
+import NewsAdj from './data/counts/adj_counts/news_adj_counts.csv'
+import CompanyAdj from './data/counts/adj_counts/companies_adj_counts.csv'
+import AcademiaAdj from './data/counts/adj_counts/academia_adj_counts.csv'
+import DefenseAdj from './data/counts/adj_counts/defense_adj_counts.csv'
 
 
 let dataSources = [{
@@ -73,19 +89,19 @@ let dataSources = [{
   "type": "news"
 },
 {
+  "name": "AngelList Companies",
+  "data": AngelData,
+  "verbs": AngelVerbs,
+  "adj": AngelAdj,
+  "color": '#bc5090',
+  "type": "companies"
+},
+{
   "name": "Y-Combinator Companies",
   "data": YCombData,
   "verbs": YCombVerbs,
   "adj": YCombAdj,
   "color": '#bc5090',
-  "type": "companies"
-},
-{
-  "name": "AngelList Defense Companies",
-  "data": AngelData,
-  "verbs": AngelVerbs,
-  "adj": AngelAdj,
-  "color": '#58508d',
   "type": "companies"
 },
 {
@@ -100,7 +116,7 @@ let dataSources = [{
   "name": "Brown CS News",
   "data": BrownData,
   "verbs": BrownVerbs,
-  // "adj": BrownAdj,
+  "adj": BrownAdj,
   "color": '#005780',
   "type": "academia"
 },
@@ -126,9 +142,53 @@ let dataSources = [{
   "verbs": DepDefVerbs,
   "adj": DepDefAdj,
   "color": '#58508d',
-  "type": "news"
+  "type": "defense"
+},
+{
+  "name": "AngelList Defense Companies",
+  "data": AngelData,
+  "verbs": AngelVerbs,
+  "adj": AngelAdj,
+  "color": '#58508d',
+  "type": "defense"
 },
 ]
+
+let aggDataSources = [
+  {
+    "name": "News Outlets",
+    "data": NewsData,
+    "verbs": NewsVerbs,
+    "adj": NewsAdj,
+    "color": '#58508d',
+    "type": "news"
+  },
+  {
+    "name": "Companies",
+    "data": CompanyData,
+    "verbs": CompanyVerbs,
+    "adj": CompanyAdj,
+    "color": '#58508d',
+    "type": "companies"
+  },
+  {
+    "name": "Academia",
+    "data": AcademiaData,
+    "verbs": AcademiaVerbs,
+    "adj": AcademiaAdj,
+    "color": '#58508d',
+    "type": "academia"
+  },
+  {
+    "name": "Defense",
+    "data": DefenseData,
+    "verbs": DefenseVerbs,
+    "adj": DefenseAdj,
+    "color": '#58508d',
+    "type": "defense"
+  },
+]
+
 let COLORS = ['#ffa600',
     '#ff6361',
     '#bc5090',
@@ -184,7 +244,6 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        
         <div className="navbar" class="sticky-top" style={{padding: "1% 0% 1% 0%"}} bg="light" variant="light">
           <div class="container-fluid" style={{textAlign: "center"}}>
             <a class="navitem" href="#context">Context</a>
@@ -245,6 +304,13 @@ How do the ways companies describe themselves differ from their true impact?
             Subjectivity is measured from a scale of 0 being objective to 1 being subjective. TextBlob measures subjectivity
             partially by how many adverbs are used (assumes texts with a higher proportion of adverbs are more subjective).
           </p>
+        </div>
+
+        <h3>Word Counts</h3>
+        <div>
+        <GridList cellHeight={500} cols={2}>
+          {aggDataSources.map(this.makeGridTile)}
+        </GridList>
         </div>
 
         <h3 id="words">Word Counts by Source</h3>

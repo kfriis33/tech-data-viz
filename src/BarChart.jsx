@@ -13,21 +13,16 @@ import FormLabel from "@material-ui/core/FormLabel"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import Radio from "@material-ui/core/Radio"
 
-const margin = {top: 30, right: 20, bottom: 30, left: 100}
+const margin = {top: 30, right: 40, bottom: 30, left: 100}
 // width = 960 - margin.left - margin.right,
 // height = 500 - margin.top - margin.bottom;
 
-const MAX_WIDTH = Math.max(1080, window.innerWidth);
+const MAX_WIDTH = Math.min(1500, window.innerWidth);
 const MAX_HEIGHT = 720;
 
 let bar_width = (MAX_WIDTH / 2) - 150, bar_height = 400;
 
 
-
-let BUBBLES_WIDTH = 1200, BUBBLES_HEIGHT = 630;
-
-// location to centre the bubbles
-const centre = { x: BUBBLES_WIDTH/2, y: BUBBLES_HEIGHT/2 };
 
 let COLORS = {"news":'#ff6361',
     "companies":'#bc5090',

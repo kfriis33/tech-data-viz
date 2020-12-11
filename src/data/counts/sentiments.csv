@@ -1,5 +1,5 @@
 source,polarity,subjectivity,type
-AngelList Defense Companies,0.113501,0.402041,company
+AngelList Defense Companies,0.113501,0.402041,defense
 Brown CS News,0.154003,0.421604,academia
 Dept of Defense News,0.078607,0.377360,defense
 The Intercept,0.041194,0.322226,news
