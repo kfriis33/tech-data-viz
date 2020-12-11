@@ -49,3 +49,9 @@ h4 {
   background-color: #0687c4;
   border-color: #0687c4;
 }
+
+.navitem{
+  padding: 5% 5% 1% 5%;
+  background-color: white;
+  border-radius: 10px;
+}
