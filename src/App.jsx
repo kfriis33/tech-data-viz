@@ -71,6 +71,8 @@ import CompanyAdj from './data/counts/adj_counts/companies_adj_counts.csv'
 import AcademiaAdj from './data/counts/adj_counts/academia_adj_counts.csv'
 import DefenseAdj from './data/counts/adj_counts/defense_adj_counts.csv'
 
+import Fade from 'react-reveal/Fade';
+
 
 let dataSources = [{
   "name": "The Intercept",
@@ -265,7 +267,9 @@ export default class App extends React.Component {
  
        <div id="context">
         <h3 >Context</h3>
-        <div className="row justify-content-between align-items-center mt-4">
+        <Fade left>
+        <div className="bubble">
+        <div className="row justify-content-between align-items-center">
           <div className="col-md-7">
             <p>In this project, we were interested in exploring the trend of techno-optimism, the notion that technology can continually be improved and can continually improve people’s lives and make the world a better place. From class readings and discussions throughout the semester, this notion was repeatedly debunked as we saw example after example of technologies that did more harm than good despite their “for good” framing to the public. This “for good” framing is pervasive throughout the tech community, from startups pitching ideas to VCs, to tech giants mining users’ data, to governments defending mass surveillance. We were interested in exploring these trends more formally, but initially we were not sure exactly how. We came up with the following questions to guide us:
 How can trends of techno-optimism be quantified and communicated to the public?
@@ -276,6 +280,7 @@ How do the ways companies describe themselves differ from their true impact?
             <h6><i>“Techno-optimism: the belief that technology and technologists are building the future and that the rest of the world, including government, needs to catch up”</i></h6>
           </div>
         </div>
+        
         <div className="row justify-content-between align-items-center mt-5">
           <div className="col-md-4">
           <h6><i>“Techno-optimism has deep roots in American political culture, and its belief in American ingenuity and technological progress”</i></h6>
@@ -284,6 +289,8 @@ How do the ways companies describe themselves differ from their true impact?
             <p>These questions led us to focusing on the written language that pushes forward overly positive views of technology. We brainstormed various text-based data sources that might have this agenda such as company mission statements and websites, and then brainstormed text-based data sources that might provide contrast such as news articles, court cases, and academia. We created datasets for ourselves using web scraping, then used natural language processing to analyze them to find the most commonly used words, the most common verbs and adjectives, and the sentiment rating of the text as a whole. Finally, we made data visualizations of these results and displayed them on a public website. By quantifying the trends of language used by different technology stakeholders and creating visualizations of them, we sought to reveal the fluff that’s used to make technology seem like an entirely positive, world-changing good and display the dissonance between this language and technology’s true impact.</p>
           </div>
         </div>
+        </div>
+        </Fade>
         </div>
         <div id="sentiment">
           <h3>Sentiment Analysis</h3>
@@ -297,23 +304,90 @@ How do the ways companies describe themselves differ from their true impact?
           </p>
           <div id="scatter-plot">
           <ScatterPlot/>
-
           </div>
+
+          <Fade left>
+          <div className="bubble">
           <p>We used <a href="https://textblob.readthedocs.io/en/dev/">TextBlob</a> to analyze the sentiment of our datasets along 2 axes: polarity (x axis) and subjectivity (y axis). Polarity measures how positive or negative the text of a source is on a scale of -1 (negative) to 1 (positive).
-            <br></br> <br></br>
+          </p>
+          <p>
             Subjectivity is measured from a scale of 0 being objective to 1 being subjective. TextBlob measures subjectivity
             partially by how many adverbs are used (assumes texts with a higher proportion of adverbs are more subjective).
           </p>
+          
+          <p> If you're interested in checking out the most positive and most negative news articles determined by this analysis, they are linked below!
+          </p>
+          
+
+          <div className="row mx-5 mt-4 justify-content-between">
+            <div className="col-md-2 py-2 border-right">
+            
+            </div>
+            <div className="col-md-5 border-right">
+            <h4>Most positive articles</h4>
+
+            </div>
+            <div className="col-md-5">
+            <h4>Most negative articles</h4>
+
+            </div>
+          </div>
+
+          <div className="row mx-5 py-2 justify-content-between border-top border-bottom">
+            <div className="col-md-2 border-right">
+            <strong>The Intercept</strong>
+
+            </div>
+            <div className="col-md-5 border-right">
+              <ul>
+                <li><a href="">Coronavirus Monitoring Bracelets Flood the Market, Ready to Snitch on People Who Don’t Distance </a>
+             (Polarity: 0.3169)</li>
+                <li><a href="">Surveillance Capitalism Meets the Coronavirus Shock Doctrine </a> (Polarity: 0.3169)
+</li>
+              </ul>
+            </div>
+            <div className="col-md-5">
+              <ul>
+                <li><a href="">Google Hedges on Promise to End Controversial Involvement in Military Drone Contract </a> (Polarity: -0.117)</li>
+                <li><a href="">Google Won’t Renew Its Drone AI Contract, But It May Still Sign Future Military AI Contracts </a> (Polarity: -0.108)</li>
+              </ul>
+            </div>
+          </div>
+          <div className="row mx-5 py-2 justify-content-between">
+          <div className="col-md-2 border-right">
+          <strong>Vox</strong>
+
+          </div>
+            <div className="col-md-5 border-right">
+              <ul>
+                <li>
+                <a href="">Okay, Google, how do I listen to Vox?</a>
+             (Polarity: 0.227)
+                </li>
+                <li>       <a href="">Morning Brew, the business newsletter publisher for millennials, is in talks to sell itself to Business Insider </a> (Polarity: 0.213)</li>
+              </ul>
+            
+            </div>
+            <div className="col-md-5">
+              <ul>
+                <li><a href="">Civil rights leaders are still fed up with Facebook over hate speech 
+</a> (Polarity: -0.06966)</li>
+                <li><a href="">The messy politics of Nextdoor</a> (Polarity: 0)</li>
+              </ul>
+            </div>
+          </div>
+          </div>
+          </Fade>
         </div>
 
-        <h3>Word Counts</h3>
+        <h3>Word Counts (aggregated)</h3>
         <div>
         <GridList cellHeight={500} cols={2}>
           {aggDataSources.map(this.makeGridTile)}
         </GridList>
         </div>
 
-        <h3 id="words">Word Counts by Source</h3>
+        <h3 id="words">Word Counts (by Source)</h3>
         <ButtonToolbar className="toolbar">
                 <p className="toolbar-text">Viewing:</p>
                 <DropdownButton className="dropdown-button" id="dropdown-button" title={this.state.barGridFilter} size="sm">
@@ -326,9 +400,11 @@ How do the ways companies describe themselves differ from their true impact?
                 </DropdownButton>
         </ButtonToolbar>
        
+       <div className="bubble">
         <GridList cellHeight={500} cols={2}>
           {dataSources.filter(this.matchesGridFilter).map(this.makeGridTile)}
         </GridList>
+        </div>
         {/* <div className = "row">
           <div className="col-md-6">
             <BarChart source="The Intercept" color='#ffa600' />

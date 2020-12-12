@@ -4,7 +4,7 @@ import './App.css'
 import * as d3 from "d3";
 import BubbleData from './data/counts/adj_counts/companies_adj_counts.csv'
 
-const margin = {top: 30, right: 20, bottom: 30, left: 100}
+const margin = {top: 30, right: 20, bottom: 30, left: 20}
 
 const MAX_WIDTH = Math.max(1080, window.innerWidth);
 const MAX_HEIGHT = 720;
