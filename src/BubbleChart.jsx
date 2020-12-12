@@ -119,6 +119,7 @@ class BubbleChart extends Component {
             .classed('bubble', true)
             .attr('r', d => d.radius)
             .attr('fill', d => fillColour(d.group))
+            .attr('class', 'sDot')
 
         // labels
         labels = elements
@@ -144,6 +145,7 @@ render() {
       return (
          <div ref ="chart">
          </div>
+
 
       )
    }

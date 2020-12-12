@@ -17,7 +17,7 @@ let COLORS = {"news":'#ff6e54',
     // '#444e86']
 
 // set the dimensions and margins of the graph
-const margin = {top: 10, right: 50, bottom: 80, left: 50};
+const margin = {top: 10, right: 50, bottom: 50, left: 50};
 let width = Math.min(860, window.innerWidth) - margin.left - margin.right;
 let height = 450 - margin.top - margin.bottom;
 

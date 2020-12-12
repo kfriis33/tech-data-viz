@@ -263,6 +263,8 @@ export default class App extends React.Component {
 
               <div id = 'bubble-chart'>
           <BubbleChart/>
+          <p className="caption">Data: most common adjectives from company mission statements</p>
+
         </div>
  
        <div id="context">
@@ -304,6 +306,8 @@ How do the ways companies describe themselves differ from their true impact?
           </p>
           <div id="scatter-plot">
           <ScatterPlot/>
+          <p className="caption">Hover over data points for more info!</p>
+
           </div>
 
           <Fade left>
@@ -336,7 +340,6 @@ How do the ways companies describe themselves differ from their true impact?
           <div className="row mx-5 py-2 justify-content-between border-top border-bottom">
             <div className="col-md-2 border-right">
             <strong>The Intercept</strong>
-
             </div>
             <div className="col-md-5 border-right">
               <ul>
@@ -380,14 +383,16 @@ How do the ways companies describe themselves differ from their true impact?
           </Fade>
         </div>
 
+        <div id="words">>
         <h3>Word Counts (aggregated)</h3>
-        <div>
-        <GridList cellHeight={500} cols={2}>
+        <br/>
+        
+        <GridList cellHeight={400} cols={2}>
           {aggDataSources.map(this.makeGridTile)}
         </GridList>
         </div>
 
-        <h3 id="words">Word Counts (by Source)</h3>
+        <h3> Word Counts (by Source)</h3>
         <ButtonToolbar className="toolbar">
                 <p className="toolbar-text">Viewing:</p>
                 <DropdownButton className="dropdown-button" id="dropdown-button" title={this.state.barGridFilter} size="sm">
@@ -401,7 +406,7 @@ How do the ways companies describe themselves differ from their true impact?
         </ButtonToolbar>
        
        <div className="bubble">
-        <GridList cellHeight={500} cols={2}>
+        <GridList cellHeight={400} cols={2}>
           {dataSources.filter(this.matchesGridFilter).map(this.makeGridTile)}
         </GridList>
         </div>

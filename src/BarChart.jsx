@@ -13,14 +13,14 @@ import FormLabel from "@material-ui/core/FormLabel"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import Radio from "@material-ui/core/Radio"
 
-const margin = {top: 30, right: 40, bottom: 30, left: 100}
+const margin = {top: 5, right: 40, bottom: 30, left: 110}
 // width = 960 - margin.left - margin.right,
 // height = 500 - margin.top - margin.bottom;
 
 const MAX_WIDTH = Math.min(1500, window.innerWidth);
 const MAX_HEIGHT = 720;
 
-let bar_width = (MAX_WIDTH / 2) - 150, bar_height = 350;
+let bar_width = (MAX_WIDTH / 2) - 150, bar_height = 300;
 
 
 

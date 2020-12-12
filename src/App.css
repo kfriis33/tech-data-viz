@@ -97,8 +97,14 @@ button:focus {
 
 .sDot:hover {
 
-  opacity: 80%;
+  opacity: 75%;
 
+}
+
+.caption {
+  font-style: italic;
+  text-align: right;
+  font-size:11px;
 }
 
 .tooltip {
