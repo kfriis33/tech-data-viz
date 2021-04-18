@@ -42,8 +42,8 @@ a {
   margin-right:20%;
 }
 .bar-chart {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
 }
 
 .toolbar-text {
@@ -81,17 +81,30 @@ a {
   /* color: white !important */
 }
 
+.navitem:hover {
+  background-color: #eeeeee;
+  text-decoration: None;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
 #context {
   /* background-color:black;
   color: white; */
 }
 
-.sDot {
-  /* fill:  rgb(0, 0, 0) !important; */
+.sDot:hover {
+
+  opacity: 75%;
+
 }
 
-.sDot:hover {
-  fill:  rgb(0, 0, 0) !important;
+.caption {
+  font-style: italic;
+  text-align: right;
+  font-size:11px;
 }
 
 .tooltip {
@@ -106,4 +119,10 @@ a {
   font-weight: bold;
   text-align: center;
   border-radius: 5px;
+}
+
+.bubble {
+  background-color: #f0f0f0;
+  padding:30px 40px;
+  border-radius:10px;
 }

@@ -16,6 +16,11 @@ let COLORS = {"news":'#ff6e54',
     // '#955196',
     // '#444e86']
 
+// set the dimensions and margins of the graph
+const margin = {top: 10, right: 50, bottom: 50, left: 50};
+let width = Math.min(860, window.innerWidth) - margin.left - margin.right;
+let height = 450 - margin.top - margin.bottom;
+
 // Scatterplot
 class ScatterPlot extends React.Component {
     constructor(props) {
@@ -31,10 +36,6 @@ class ScatterPlot extends React.Component {
     }
  
     startScatter = (div_id) => {
-        // set the dimensions and margins of the graph
-        var margin = {top: 10, right: 30, bottom: 50, left: 60},
-        width = 860 - margin.left - margin.right,
-        height = 450 - margin.top - margin.bottom;
 
         // append the svg object to the body of the page
         let svg_scatter = d3.select(div_id)
@@ -52,18 +53,10 @@ class ScatterPlot extends React.Component {
 
         //Read the data
         d3.csv(ScatterData).then(function(data) {
-
-            // data.forEach(function(d) {
-            //     d.subjectivity = +d.subjectivity;
-            //     d.polarity = +d.polarity;
-            // });
-
-
-            console.log(data)
             // Add X axis
             var x = d3.scaleLinear()
                 .domain([-1, 1])
-                .range([ 0, width ]);
+                .range([ 0, width]);
                 
             svg_scatter.append("g")
                 .attr("transform", "translate(0," + height + ")")
@@ -74,7 +67,6 @@ class ScatterPlot extends React.Component {
                 .domain([0, 1])
                 .range([ height, 0])
 
-                
             svg_scatter.append("g")
                 .attr("transform", "translate(" + x.range()[1] / 2 + ", 0)")
                 .call(d3.axisLeft(y));
@@ -113,11 +105,8 @@ class ScatterPlot extends React.Component {
             tooltip.style('opacity', 0);
             }
     
-
-
             dots.enter()
                 .append("circle")
-                // .attr("id", "circleBasicTooltip")
                 .attr("cx", (d)=> x(d.polarity))
                 .attr("cy", (d) => y(d.subjectivity))
                 .attr("r", 8)
@@ -125,9 +114,6 @@ class ScatterPlot extends React.Component {
                 .attr("class", "sDot")
                 .on("mouseout", mouseout)
                 .on("mouseover", mouseover);
-
-                // .append("title")
-                // .text("hello");
 
             svg_scatter.append("text")
                 .attr("transform", `translate(${(width) / 2},
@@ -139,22 +125,6 @@ class ScatterPlot extends React.Component {
                 .attr("transform", `translate(0, ${(height) / 2})rotate(-90)`)       // HINT: Place this at the center left edge of the graph
                 .style("text-anchor", "middle")
                 .text("Subjectivity");
-                
-            // svg_scatter.selectAll("text")
-            //     .data(data)
-            //     .enter()
-            //     .append("text")
-
-            // create a tooltip
-            // var tooltip = d3.select(div_id)
-            //     .append("div")
-            //     .style("position", "absolute")
-            //     .style("visibility", "hidden")
-            //     .text("I'm a circle!");
-            // d3.select("#circleBasicTooltip")
-            // .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-            // // .on("mousemove", function(){return tooltip.style("top", (event.pageY-800)+"px").style("left",(event.pageX-800)+"px");})
-            // .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
         })
 
     }

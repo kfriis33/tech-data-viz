@@ -13,14 +13,14 @@ import FormLabel from "@material-ui/core/FormLabel"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import Radio from "@material-ui/core/Radio"
 
-const margin = {top: 30, right: 40, bottom: 30, left: 100}
+const margin = {top: 5, right: 40, bottom: 30, left: 110}
 // width = 960 - margin.left - margin.right,
 // height = 500 - margin.top - margin.bottom;
 
 const MAX_WIDTH = Math.min(1500, window.innerWidth);
 const MAX_HEIGHT = 720;
 
-let bar_width = (MAX_WIDTH / 2) - 150, bar_height = 400;
+let bar_width = (MAX_WIDTH / 2) - 150, bar_height = 300;
 
 
 
@@ -51,14 +51,14 @@ class BarChart extends Component {
    constructor(props){
       super(props)
       this.state = {
-         radioSelector:"all"
+         radioSelector:"adjectives"
       }
       this.startBar = this.startBar.bind(this)
       
 
    }
    componentDidMount() {
-      this.startBar(COLORS[this.props.type], this.props.data);
+      this.startBar(COLORS[this.props.type], this.props.adjData);
    }
 
    componentDidUpdate() {
@@ -189,9 +189,10 @@ render() {
             <FormControl component="fieldset">
                
             <RadioGroup row  name="gender1" value={this.state.radioSelector} onChange={this.updateData}>
-               <FormControlLabel value="all" control={<Radio />} label="All" />
-               <FormControlLabel value="verbs" control={<Radio />} label="Verbs" />
                <FormControlLabel value="adjectives" control={<Radio />} label="Adjectives" />
+               <FormControlLabel value="verbs" control={<Radio />} label="Verbs" />
+               <FormControlLabel value="all" control={<Radio />} label="All" />
+
             </RadioGroup>
             </FormControl>
             </div>

@@ -4,7 +4,7 @@ import './App.css'
 import * as d3 from "d3";
 import BubbleData from './data/counts/adj_counts/companies_adj_counts.csv'
 
-const margin = {top: 30, right: 20, bottom: 30, left: 100}
+const margin = {top: 30, right: 20, bottom: 30, left: 20}
 
 const MAX_WIDTH = Math.max(1080, window.innerWidth);
 const MAX_HEIGHT = 720;
@@ -119,6 +119,7 @@ class BubbleChart extends Component {
             .classed('bubble', true)
             .attr('r', d => d.radius)
             .attr('fill', d => fillColour(d.group))
+            .attr('class', 'sDot')
 
         // labels
         labels = elements
@@ -144,6 +145,7 @@ render() {
       return (
          <div ref ="chart">
          </div>
+
 
       )
    }
