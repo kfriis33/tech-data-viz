@@ -9,6 +9,8 @@ import csv
 import pandas as pd
 import scipy
 import numpy as np
+from statsmodels.stats.multicomp import (pairwise_tukeyhsd,
+                                         MultiComparison)
 
 
 def index_2d(myList, v):
@@ -78,52 +80,65 @@ def sentiment(filepath, row_num):
 
     #print(sent)
 
-def sent_ttest(filepath1, filepath2, filepath3):
+def sent_ttest(filepath1, filelist):
     sent = []
 
     file1 = open(filepath1, 'r')
     lines = csv.reader(file1)
 
     for l in lines:
-        sentence = l[0]
+        sentence = l[0] + l[1]
         blob = TextBlob(sentence)
-        sent.append((blob.sentiment.polarity, blob.sentiment.subjectivity))
+        sent.append(('news', blob.sentiment.polarity))
 
-    df = pd.DataFrame(sent, columns = ['polarity','subjectivity'])
+    df = pd.DataFrame(sent, columns = ['group','polarity'])
     include =['object', 'float', 'int'] 
-    print(df.describe(include = include))
-
+    #print(filepath1)
+    #print(df.describe(include = include))
 
     sent2 = []
-
-    file2 = open(filepath2, 'r')
-    lines2 = csv.reader(file2)
-
-    for l in lines2:
-        sentence = l[0]
-        blob = TextBlob(sentence)
-        sent2.append((blob.sentiment.polarity, blob.sentiment.subjectivity))
-
-    df2 = pd.DataFrame(sent2, columns = ['polarity','subjectivity'])
-    print(df2.describe(include = include))
-
     sent3 = []
+    sent4 = []
+    sentarray = [sent2, sent3, sent4]
+    group = ['academia', 'companies', 'defense']
+    counter = 0
 
-    file3 = open(filepath3, 'r')
-    lines3 = csv.reader(file3)
+    for item in filelist:
+        readfile = open(item, 'r')
+        rows = csv.reader(readfile)
 
-    for l in lines3:
-        sentence = l[0]
-        blob = TextBlob(sentence)
-        sent3.append((blob.sentiment.polarity, blob.sentiment.subjectivity))
+        for row in rows:
+            sentence = row[0]
+            blob = TextBlob(sentence)
+            sentarray[counter].append((group[counter], blob.sentiment.polarity))
 
-    df3 = pd.DataFrame(sent3, columns = ['polarity','subjectivity'])
-    print(df3.describe(include = include))
+        counter+=1
 
-    print(scipy.stats.f_oneway(sent, sent2, sent3))
-    #print(scipy.stats.ttest_ind(sent, sent2, equal_var=False))
 
-sent_ttest('src/data/academia.csv', 'src/data/companies.csv', 'src/data/news.csv')
+    df2 = pd.DataFrame(sent2, columns = ['group','polarity'])
+    #print(filelist[0])
+    #print(df2.describe(include = include))
+
+    df3 = pd.DataFrame(sent3, columns = ['group','polarity'])
+    #print(filelist[1])
+    #print(df3.describe(include = include))
+
+    df4 = pd.DataFrame(sent4, columns = ['group','polarity'])
+    #print(filelist[2])
+    #print(df4.describe(include = include))
+
+    # run anova test for difference of group of means
+    print(scipy.stats.f_oneway(sent, sent2, sent3, sent4))
+
+    frames = [df, df2, df3, df4]
+    stacked = pd.concat(frames)
+
+    MultiComp = pairwise_tukeyhsd(endog=stacked['polarity'],
+                            groups=stacked['group'], alpha=0.001)
+
+    print(MultiComp)
+
+sent_ttest( 'src/data/news.csv', ['src/data/academia.csv', 'src/data/companies.csv', 'src/data/defense.csv'])
 #sentiment('src/data/scraping_data/ycombo.csv', 0)
 #sentiment('src/data/scraping_data/intercept-data.csv', 6)
 #sentiment('src/data/scraping_data/vox-data.csv', 7)
